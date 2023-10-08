@@ -38,6 +38,10 @@ export interface PlaceSearchResult {
       ::ng-deep .mdc-notched-outline {
         opacity: 0;
       }
+      ::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+        padding-top:25px;
+        padding-bottom:0px;
+      }
 
       
     `,
