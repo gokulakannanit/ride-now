@@ -9,8 +9,8 @@
     "test": "ng test",
     "heroku-postbuild": "ng build --aot"
   },
-  "main": "/server.js",
   "private": true,
+  "main": "server.js",
   "engines": {
     "node": "16.15.0",
     "npm": "8.5.5"
