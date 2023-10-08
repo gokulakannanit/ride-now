@@ -42,6 +42,9 @@ export interface PlaceSearchResult {
         padding-top:25px;
         padding-bottom:0px;
       }
+      ::ng-deep .mat-form-field.mat-focused .mat-form-field-underline {
+        display: none;
+      }
 
       
     `,
