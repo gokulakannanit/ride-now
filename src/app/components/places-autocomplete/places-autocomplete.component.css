@@ -1,0 +1,3 @@
+.mat-mdc-list-base::odd{
+    border-bottom: 1px solid #ccc;
+}
