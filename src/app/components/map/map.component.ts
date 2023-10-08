@@ -8,7 +8,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent {
-  constructor(private toastr: ToastrService) {}
+  constructor(private toastr: ToastrService) {} 
 
   loading: Boolean;
 
