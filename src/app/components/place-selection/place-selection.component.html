@@ -1,0 +1,23 @@
+<div class="place-selection-container">
+    <mat-list class="input-area">
+        <mat-list-item>
+            <span matListItemIcon>
+                <mat-icon color="primary">location_on</mat-icon>
+            </span>
+            <app-place-autocomplete
+                (placeChanged)="fromValue = $event"
+                placeholder="Departure"
+            ></app-place-autocomplete>
+        </mat-list-item>
+
+        <mat-list-item>
+            <span matListItemIcon>
+                <mat-icon color="primary">trip_origin</mat-icon>
+            </span>
+            <app-place-autocomplete
+            (placeChanged)="toValue = $event"
+            placeholder="Where do you want to go?"
+            ></app-place-autocomplete>
+        </mat-list-item>
+    </mat-list>
+</div>
