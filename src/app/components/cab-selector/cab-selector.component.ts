@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./cab-selector.component.css']
 })
 export class CabSelectorComponent {
-  openLink(event: MouseEvent): void {
-    event.preventDefault();
+  cabModel: String = 'mini';
+  selectCab(_cabModel:String): void {
+    this.cabModel = _cabModel;
   }
 }

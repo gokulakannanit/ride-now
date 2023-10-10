@@ -1,17 +1,17 @@
 <div  class="cab-selection">
   <mat-list>
       <h2 mat-subheader>Choose your vehicle type</h2>
-      <mat-list-item (click)="openLink($event)" class="mat-elevation-z5">
+      <mat-list-item (click)="selectCab('mini')" [ngClass]="{'mat-elevation-z5': cabModel ==='mini'}">
         <img src="/assets/images/car/mini.png" matListItemIcon class="thumb_image"/>
         <div matListItemTitle>Mini</div>
         <div matListItemMeta>12 Mins</div>
       </mat-list-item>
-      <mat-list-item (click)="openLink($event)">
+      <mat-list-item (click)="selectCab('sedan')" [ngClass]="{'mat-elevation-z5': cabModel ==='sedan'}">
         <img src="/assets/images/car/mini.png" matListItemIcon class="thumb_image"/>
         <div matListItemTitle>Sedan</div>
         <div matListItemMeta>5 Mins</div>
       </mat-list-item>
-      <mat-list-item (click)="openLink($event)">
+      <mat-list-item (click)="selectCab('suv')" [ngClass]="{'mat-elevation-z5': cabModel ==='suv'}">
         <img src="/assets/images/car/mini.png" matListItemIcon class="thumb_image"/>
         <div matListItemTitle>SUV</div>
         <div matListItemMeta>5 Mins</div>
