@@ -11,12 +11,13 @@
 
 footer{
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: center;
     background-color: #fff;
+    padding: 10px;
 }
 
 footer button {
