@@ -19,10 +19,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { MapComponent } from './components/map/map.component';
 import { PlaceAutocompleteComponent } from './components/places-autocomplete/places-autocomplete.component';
 import { PlaceSelectionComponent } from './components/place-selection/place-selection.component';
+import { CabSelectorComponent } from './components/cab-selector/cab-selector.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    CabSelectorComponent,
     NavbarComponent,
     MapComponent,
     PlaceSelectionComponent,

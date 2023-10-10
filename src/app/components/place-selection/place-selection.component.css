@@ -1,6 +1,7 @@
 .place-selection-container {
     background: #fff;
     border-radius: 6px;
+    max-width: 420px;
 }
 
 .input-area{

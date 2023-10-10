@@ -7,9 +7,12 @@ declare var closeLoader:any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
+  mode:String = 'initial';
   ngOnInit(): void {
     closeLoader & closeLoader();
   }
 
+  onRideNow(): void {
+    this.mode = 'selection'
+  }
 }

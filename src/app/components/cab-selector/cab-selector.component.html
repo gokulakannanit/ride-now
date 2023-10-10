@@ -1,21 +1,24 @@
-<mat-nav-list>
-    <a href="https://keep.google.com/" mat-list-item (click)="openLink($event)">
-      <span matListItemTitle>Google Keep</span>
-      <span matLine>Add to a note</span>
-    </a>
-  
-    <a href="https://docs.google.com/" mat-list-item (click)="openLink($event)">
-      <span matListItemTitle>Google Docs</span>
-      <span matLine>Embed in a document</span>
-    </a>
-  
-    <a href="https://plus.google.com/" mat-list-item (click)="openLink($event)">
-      <span matListItemTitle>Google Plus</span>
-      <span matLine>Share with your friends</span>
-    </a>
-  
-    <a href="https://hangouts.google.com/" mat-list-item (click)="openLink($event)">
-      <span matListItemTitle>Google Hangouts</span>
-      <span matLine>Show to your coworkers</span>
-    </a>
-  </mat-nav-list>
+<div>
+  <mat-list>
+      <h2 mat-subheader>Choose your vechile type</h2>
+      <mat-list-item (click)="openLink($event)">
+        <img src="/assets/images/car/mini.png" matListItemIcon class="thumb_image"/>
+        <div matListItemTitle>Mini</div>
+        <div matListItemLine>12 Mins</div>
+      </mat-list-item>
+      <mat-list-item (click)="openLink($event)">
+        <img src="/assets/images/car/mini.png" matListItemIcon class="thumb_image"/>
+        <div matListItemTitle>Sedan</div>
+        <div matListItemLine>5 Mins</div>
+      </mat-list-item>
+      <mat-list-item (click)="openLink($event)">
+        <img src="/assets/images/car/mini.png" matListItemIcon class="thumb_image"/>
+        <div matListItemTitle>SUV</div>
+        <div matListItemLine>5 Mins</div>
+      </mat-list-item>
+  </mat-list>
+  <div style="margin-top: 20px;">
+    <button mat-raised-button color="secondary">BACK</button>
+    <button mat-raised-button color="primary">BOOK NOW</button>
+  </div>
+</div>

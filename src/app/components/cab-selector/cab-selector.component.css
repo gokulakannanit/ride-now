@@ -1,0 +1,8 @@
+:host {
+    width:100%;
+}
+
+.thumb_image {
+    width: 80px;
+    height: auto;
+}
