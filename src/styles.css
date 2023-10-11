@@ -11,3 +11,7 @@ body { margin: 0;}
     --mdc-protected-button-container-color: #FFA500;
 }
 
+.mat-icon.mat-accent {
+    --mat-icon-color: #FFA500;
+}
+
