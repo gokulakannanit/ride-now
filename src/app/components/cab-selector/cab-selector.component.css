@@ -13,6 +13,9 @@
 }
 
 .cab-selection ::ng-deep .mat-mdc-list-item {
+    padding: 10px;
     background-color: #efefef;
     margin-bottom: 10px;
+    padding-top: 35px !important;
+    padding-bottom: 35px !important;
 }
