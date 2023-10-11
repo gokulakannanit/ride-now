@@ -15,3 +15,7 @@ body { margin: 0;}
     --mat-icon-color: #FFA500;
 }
 
+.mat-icon.small {
+    font-size: 12px;
+}
+

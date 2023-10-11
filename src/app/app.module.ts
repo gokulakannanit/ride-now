@@ -20,6 +20,7 @@ import { MapComponent } from './components/map/map.component';
 import { PlaceAutocompleteComponent } from './components/places-autocomplete/places-autocomplete.component';
 import { PlaceSelectionComponent } from './components/place-selection/place-selection.component';
 import { CabSelectorComponent } from './components/cab-selector/cab-selector.component';
+import { TripDetailsComponent } from './components/trip-details/trip-details.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CabSelectorComponent } from './components/cab-selector/cab-selector.com
     NavbarComponent,
     MapComponent,
     PlaceSelectionComponent,
-    PlaceAutocompleteComponent
+    PlaceAutocompleteComponent,
+    TripDetailsComponent
   ],
   imports: [    
     BrowserModule,

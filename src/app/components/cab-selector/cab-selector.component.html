@@ -1,6 +1,12 @@
 <div  class="cab-selection">
   <mat-list>
       <h2 mat-subheader>Choose your vehicle type</h2>
+      <h3 class="cab-selection-distance">
+        <mat-icon color="accent">location_on</mat-icon>
+        <mat-icon color="accent" class="small">location_on</mat-icon>
+        <span style="flex:auto;margin-left:10px;">Distance</span>
+        <span>10 km</span>
+      </h3>
       <mat-list-item (click)="selectCab('mini')" [ngClass]="{'mat-elevation-z5': cabModel ==='mini'}">
         <img src="/assets/images/car/mini.png" matListItemIcon class="thumb_image"/>
         <div matListItemTitle>Mini</div>
@@ -17,8 +23,8 @@
         <div matListItemMeta>5 Mins</div>
       </mat-list-item>
   </mat-list>
-  <div>
-    <button mat-raised-button color="secondary"><mat-icon>arrow_back_ios</mat-icon>BACK</button>
-    <button mat-raised-button color="primary" class="btn-medium">BOOK NOW</button>
+  <div style="display: flex;">
+    <button mat-raised-button color="secondary" (click)="onBookNow('back')"><mat-icon>arrow_back_ios</mat-icon>BACK</button>
+    <button mat-raised-button color="primary" class="btn-medium" style="flex: auto;" (click)="onBookNow('select')">BOOK NOW</button>
   </div>
 </div>
