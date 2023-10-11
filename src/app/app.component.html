@@ -4,8 +4,7 @@
   </div>
   <app-map></app-map>
   <footer>
-    <button mat-raised-button color="primary" *ngIf="mode === 'initial'" (click)="onRideNow()">RIDE NOW</button>
-    <app-cab-selector *ngIf="mode === 'selection'"></app-cab-selector>
+    <button mat-raised-button color="primary" (click)="onRideNow()">RIDE NOW</button>
   </footer>
   <router-outlet></router-outlet>
 </div>

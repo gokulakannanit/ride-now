@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { CabSelectorComponent } from './components/cab-selector/cab-selector.component';
 declare var closeLoader:any;
 
 @Component({
@@ -7,12 +9,12 @@ declare var closeLoader:any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  mode:String = 'initial';
+  constructor(private _bottomSheet: MatBottomSheet) {}
   ngOnInit(): void {
     closeLoader & closeLoader();
   }
 
   onRideNow(): void {
-    this.mode = 'selection'
+    this._bottomSheet.open(CabSelectorComponent);
   }
 }
