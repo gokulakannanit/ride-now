@@ -21,6 +21,7 @@ import { PlaceAutocompleteComponent } from './components/places-autocomplete/pla
 import { PlaceSelectionComponent } from './components/place-selection/place-selection.component';
 import { CabSelectorComponent } from './components/cab-selector/cab-selector.component';
 import { TripDetailsComponent } from './components/trip-details/trip-details.component';
+import { StarRatingComponent } from './components/star-rating/star-rating.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TripDetailsComponent } from './components/trip-details/trip-details.com
     MapComponent,
     PlaceSelectionComponent,
     PlaceAutocompleteComponent,
-    TripDetailsComponent
+    TripDetailsComponent,
+    StarRatingComponent
   ],
   imports: [    
     BrowserModule,

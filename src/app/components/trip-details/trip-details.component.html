@@ -3,6 +3,7 @@
         <img src="/assets/images/driver/1.jpg" width="80px" style="border-radius: 6px;"/>
         <div style="flex:auto;margin-left:15px;">
             <h3>Chandran L</h3>
+            <app-star-rating [rating]="rating"  [starCount]="starCount" [color]="starColor" (ratingUpdated)="onRatingChanged($event)"></app-star-rating>
             <p>Total trip 84</p>
         </div>
         <a href="tel:+917358630994">
