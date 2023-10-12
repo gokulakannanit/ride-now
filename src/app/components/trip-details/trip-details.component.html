@@ -1,8 +1,9 @@
 <div style="padding:10px;">
+    <h2>Booking Confirmed</h2>
     <div style="display: flex;">
-        <img src="/assets/images/driver/1.jpg" width="80px" style="border-radius: 6px;"/>
+        <img src="/assets/images/driver/1.jpg" style="border-radius: 6px;height: 80px;width:80px"/>
         <div style="flex:auto;margin-left:15px;">
-            <h3>Chandran L</h3>
+            <p>Chandran L</p>
             <app-star-rating [rating]="rating"  [starCount]="starCount" [color]="starColor" (ratingUpdated)="onRatingChanged($event)"></app-star-rating>
             <p>Total trip 84</p>
         </div>
@@ -30,4 +31,8 @@
         <div style="border-right:1px solid #999;padding-right: 10px;">AMAZE</div>
         <div>TN14 Z 1234</div>
     </div>
+    <div style="display: flex;justify-content: space-between;">
+        <button mat-raised-button color="secondary"><mat-icon>home</mat-icon>HOME</button>
+        <button mat-raised-button color="primary" class="btn-medium" style="flex: auto;">CANCEL BOOKING</button>
+      </div>
 </div>
