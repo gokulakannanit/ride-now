@@ -11,6 +11,9 @@
             <mat-icon style="border-radius: 50%;background-color: #3f51b5;padding:10px;color: white;">call</mat-icon>
         </a>
     </div>
+    <p class="font-primary" *ngIf="timer > 0">Your cab will be arriving in <span>{{ timer }} Mins</span></p>
+    <p class="font-secondary" *ngIf="timer === 0">Your cab has been arrived, call your diver</p>
+    <p>please share OTP sent to your mobile to start ride</p>
     <div style="display:flex;margin-top: 20px;justify-content: space-between">
         <div style="flex:1;background-color: #efefef;padding:10px;text-align: center;margin-right:10px;border-radius: 6px;">
             <p><b>CASH</b></p>
