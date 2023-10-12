@@ -8,8 +8,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 })
 export class SidebarComponent {
   @Input() public position:'start' | 'end'  = 'start';
-  @ViewChild('ctrl')
-  private ctrl: MatSidenav;
+  @ViewChild('ctrl') ctrl: MatSidenav;
 
   constructor() {}
 
@@ -20,6 +19,7 @@ export class SidebarComponent {
     return this.ctrl.toggle();
   }
   close(): Promise<any> {
+    console.log('here is the close');
     return this.ctrl.close();
   }
 }

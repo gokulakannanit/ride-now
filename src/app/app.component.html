@@ -5,36 +5,16 @@
     </button>
   </header>
   
-    <app-place-selection class="place-selector"></app-place-selection>
-    <app-map></app-map>
-    <footer>
-      <button mat-raised-button color="primary" (click)="onRideNow()">RIDE NOW</button>
-    </footer>
-    <router-outlet></router-outlet>
+  <app-place-selection class="place-selector"></app-place-selection>
+  <app-map></app-map>
+  <footer>
+    <button mat-raised-button color="primary" (click)="onRideNow()">RIDE NOW</button>
+  </footer>
+  <router-outlet></router-outlet>
   
-    <!--Start of Side bar category list-->
+  <!--Start of Side bar category list-->
   <app-sidebar #leftSideNav position="start">
-    <div ngProjectAs="body" style="width:70%;height: 100vh;background-color: #fff;padding: 20px;">
-      <mat-list>
-        <h2>My Profile<mat-icon>arrow_forward_ios</mat-icon></h2>
-        <mat-list-item>
-          <mat-icon matListItemIcon>history</mat-icon>
-          <p>Your Rides</p>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon matListItemIcon>payment</mat-icon>
-          <p>Payment</p>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon matListItemIcon>support</mat-icon>
-          <p>Support</p>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon matListItemIcon>info</mat-icon>
-          <p>About</p>
-        </mat-list-item>
-      </mat-list>
-    </div>
+      <app-navbar ngProjectAs="body"></app-navbar>
   </app-sidebar>
   <!--End of Side bar category list-->
 </div>
