@@ -1,12 +1,11 @@
-.place-selector {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    justify-content: center;
-}
 
+header {
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:11;
+    padding: 10px;
+}
 footer{
     position: absolute;
     bottom: 0;
@@ -23,3 +22,12 @@ footer button {
     width: 80%;
 }
 
+.place-selector {
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+}

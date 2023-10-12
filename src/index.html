@@ -48,9 +48,14 @@
         const closeLoader = () => {
             const loader = document.querySelectorAll('.loading')[0];
             loader.style.display = 'none';
+            setTimeout(() => {
+                var ele = document.getElementsByClassName('dismissButton');
+                ele.length > 0 && ele[0].click() && clearInterval(int);
+            }, 2000);
         }
-        window.screen.lockOrientationUniversal = window.screen.lockOrientation || window.screen.mozLockOrientation || window.screen.msLockOrientation
-        window.screen.lockOrientationUniversal('portrait');
+        //window.screen.lockOrientationUniversal = window.screen.lockOrientation || window.screen.mozLockOrientation || window.screen.msLockOrientation
+        //window.screen.lockOrientationUniversal('portrait');
+        
     </script>
 </body>
 </html>

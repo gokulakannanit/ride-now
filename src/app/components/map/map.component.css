@@ -8,6 +8,10 @@
     height: 100vh !important;
 }
 
+::ng-deep .map-container div:nth-child(2) {
+    /*display: none !important;*/
+}
+
 ::ng-deep .gm-style-cc {
     display: none !important;
 }

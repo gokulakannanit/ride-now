@@ -22,6 +22,8 @@ import { PlaceSelectionComponent } from './components/place-selection/place-sele
 import { CabSelectorComponent } from './components/cab-selector/cab-selector.component';
 import { TripDetailsComponent } from './components/trip-details/trip-details.component';
 import { StarRatingComponent } from './components/star-rating/star-rating.component';
+import { SidebarComponent } from './common/sidebar/sidebar.component';
+import { MatSidenav, MatSidenavContainer, MatSidenavContent, MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { StarRatingComponent } from './components/star-rating/star-rating.compon
     PlaceSelectionComponent,
     PlaceAutocompleteComponent,
     TripDetailsComponent,
-    StarRatingComponent
+    StarRatingComponent,
+    SidebarComponent
   ],
   imports: [    
     BrowserModule,
@@ -43,6 +46,7 @@ import { StarRatingComponent } from './components/star-rating/star-rating.compon
     MatButtonModule,
     MatListModule,
     MatFormFieldModule,
+    MatSidenavModule,
     MatIconModule,
     MatInputModule,
     MatBottomSheetModule,

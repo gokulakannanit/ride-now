@@ -1,10 +1,20 @@
 <div>
-  <div class="place-selector">
-    <app-place-selection></app-place-selection>
-  </div>
-  <app-map></app-map>
-  <footer>
-    <button mat-raised-button color="primary" (click)="onRideNow()">RIDE NOW</button>
-  </footer>
-  <router-outlet></router-outlet>
+  <header>
+    <button mat-mini-fab (click)="leftSideNav.open()" color="white">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </header>
+  
+    <app-place-selection class="place-selector"></app-place-selection>
+    <app-map></app-map>
+    <footer>
+      <button mat-raised-button color="primary" (click)="onRideNow()">RIDE NOW</button>
+    </footer>
+    <router-outlet></router-outlet>
+  
+    <!--Start of Side bar category list-->
+  <app-sidebar #leftSideNav position="start">
+    <p ngProjectAs="body" style="height: 100vh;background-color: #fff;padding: 20px;">sidebar-content   sidebar-contentsidebar-contentsidebar-content</p>
+  </app-sidebar>
+  <!--End of Side bar category list-->
 </div>

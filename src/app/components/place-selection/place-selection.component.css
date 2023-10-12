@@ -2,6 +2,8 @@
     background: #fff;
     border-radius: 6px;
     max-width: 420px;
+    width:90%;
+    justify-self: center;
 }
 
 .input-area{
