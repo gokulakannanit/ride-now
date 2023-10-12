@@ -14,7 +14,27 @@
   
     <!--Start of Side bar category list-->
   <app-sidebar #leftSideNav position="start">
-    <p ngProjectAs="body" style="height: 100vh;background-color: #fff;padding: 20px;">sidebar-content   sidebar-contentsidebar-contentsidebar-content</p>
+    <div ngProjectAs="body" style="width:70%;height: 100vh;background-color: #fff;padding: 20px;">
+      <mat-list>
+        <h2>My Profile<mat-icon>arrow_forward_ios</mat-icon></h2>
+        <mat-list-item>
+          <mat-icon matListItemIcon>history</mat-icon>
+          <p>Your Rides</p>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>payment</mat-icon>
+          <p>Payment</p>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>support</mat-icon>
+          <p>Support</p>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>info</mat-icon>
+          <p>About</p>
+        </mat-list-item>
+      </mat-list>
+    </div>
   </app-sidebar>
   <!--End of Side bar category list-->
 </div>

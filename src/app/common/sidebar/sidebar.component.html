@@ -1,10 +1,7 @@
-<mat-sidenav-container>
+<mat-sidenav-container hasBackdrop="true" (backdropClick)="close()">
     <mat-sidenav ngClass.lt-sm="sm" [position]="position" #ctrl mode="over" fixedInViewport="true" fixedTopGap="0" fixedBottomGap="0">
         <div class="top-bar head">
             <ng-content select="header"></ng-content>
-            <button mat-icon-button color="primary" class="close" [ngClass]="{'end': position === 'end'}" (click)="toggle()">
-        <mat-icon>close</mat-icon>
-      </button>
         </div>
         <div class="sidebar-content">
             <ng-content select="body"></ng-content>
