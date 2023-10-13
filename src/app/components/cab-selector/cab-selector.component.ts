@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
 import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 
+export interface VechileTypes {
+  id:Number,
+  name: String,
+  imageURL: String,
+  minutes: String
+}
+
 @Component({
   selector: 'app-cab-selector',
   templateUrl: './cab-selector.component.html',
@@ -8,8 +15,16 @@ import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 })
 export class CabSelectorComponent {
   constructor(private _bottomRef:MatBottomSheetRef) {}
-  cabModel: String = 'mini';
-  selectCab(_cabModel:String): void {
+  
+  vechileTypes: Array<VechileTypes> = [
+    {id: 1, name: 'Auto', imageURL: '/assets/images/car/auto.png', minutes: '4'},
+    {id: 2, name: 'Mini', imageURL: '/assets/images/car/mini.png', minutes: '12'},
+    {id: 3, name: 'Sedan', imageURL: '/assets/images/car/sedan.png', minutes: '5'},
+    {id: 4, name: 'SUV', imageURL: '/assets/images/car/suv.png', minutes: '5'}
+  ];
+  cabModel: Number = this.vechileTypes[0].id;
+
+  selectCab(_cabModel:Number): void {
     this.cabModel = _cabModel;
   }
   onBookNow(closeMessage: String): void {    

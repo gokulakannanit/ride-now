@@ -1,26 +1,16 @@
 <div  class="cab-selection">
+  <h2 mat-subheader>Choose your vehicle type</h2>
+  <h3 class="cab-selection-distance">
+    <mat-icon color="accent">location_on</mat-icon>
+    <mat-icon color="accent" class="small">location_on</mat-icon>
+    <span style="flex:auto;margin-left:10px;">Distance</span>
+    <span>10 km</span>
+  </h3>
   <mat-list>
-      <h2 mat-subheader>Choose your vehicle type</h2>
-      <h3 class="cab-selection-distance">
-        <mat-icon color="accent">location_on</mat-icon>
-        <mat-icon color="accent" class="small">location_on</mat-icon>
-        <span style="flex:auto;margin-left:10px;">Distance</span>
-        <span>10 km</span>
-      </h3>
-      <mat-list-item (click)="selectCab('mini')" [ngClass]="{'mat-elevation-z5': cabModel ==='mini'}">
-        <img src="/assets/images/car/mini.png" matListItemIcon class="thumb_image"/>
-        <div matListItemTitle>Mini</div>
-        <div matListItemMeta>12 Mins</div>
-      </mat-list-item>
-      <mat-list-item (click)="selectCab('sedan')" [ngClass]="{'mat-elevation-z5': cabModel ==='sedan'}">
-        <img src="/assets/images/car/sedan.png" matListItemIcon class="thumb_image"/>
-        <div matListItemTitle>Sedan</div>
-        <div matListItemMeta>5 Mins</div>
-      </mat-list-item>
-      <mat-list-item (click)="selectCab('suv')" [ngClass]="{'mat-elevation-z5': cabModel ==='suv'}">
-        <img src="/assets/images/car/suv.png" matListItemIcon class="thumb_image"/>
-        <div matListItemTitle>SUV</div>
-        <div matListItemMeta>5 Mins</div>
+      <mat-list-item *ngFor="let type of vechileTypes" (click)="selectCab(type.id)" [ngClass]="{'mat-elevation-z5': cabModel === type.id}">
+        <img src="{{type.imageURL}}" matListItemIcon class="thumb_image"/>
+        <div matListItemTitle>{{ type.name }}</div>
+        <div matListItemMeta>{{ type.minutes }} Mins</div>
       </mat-list-item>
   </mat-list>
   <div style="display: flex;">
