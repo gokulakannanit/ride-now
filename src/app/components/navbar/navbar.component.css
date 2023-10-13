@@ -1,7 +1,6 @@
 :host {
     display: block;
     padding: 20px;
-    min-width: 320px;
 }
 
 .navlink ::ng-deep .mdc-list-item__content {
