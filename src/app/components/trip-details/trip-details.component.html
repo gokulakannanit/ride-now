@@ -1,38 +1,46 @@
-<div style="padding:10px;">
+<div>
     <h2>Booking Confirmed</h2>
-    <div style="display: flex;">
-        <img src="/assets/images/driver/1.jpg" style="border-radius: 6px;height: 80px;width:80px"/>
-        <div style="flex:auto;margin-left:15px;">
-            <p><b>Chandran L.K.M</b></p>
-            <app-star-rating [rating]="rating"  [starCount]="starCount" [color]="starColor" (ratingUpdated)="onRatingChanged($event)"></app-star-rating>
-            <p>Total trip 84</p>
+    <div class="flex_box">
+        <img [src]="tripDetail.imageURL" class="thumb"/>
+        <div class="driver_detail">
+            <p><b>{{ tripDetail.driverName }}</b></p>
+            <app-star-rating [rating]="tripDetail.rating" 
+            [starCount]="starCount" 
+            [color]="starColor" 
+            (ratingUpdated)="onRatingChanged($event)"></app-star-rating>
+            <p>Total trip {{ tripDetail.totalTrip }}</p>
         </div>
-        <a href="tel:+917358630994">
-            <mat-icon style="border-radius: 50%;background-color: #3f51b5;padding:10px;color: white;">call</mat-icon>
+        <a href="tel:{{ tripDetail.contactNo }}">
+            <mat-icon class="call_icon">call</mat-icon>
         </a>
     </div>
-    <p class="font-primary" *ngIf="timer > 0">Your cab will be arriving in <span>{{ timer }} Min</span></p>
-    <p class="font-secondary" *ngIf="timer === 0">Your cab has been arrived, call your diver</p>
+    <p class="font-primary" *ngIf="tripDetail.vechileTimer > 0">
+        Your cab will be arriving in 
+        <span>{{ tripDetail.vechileTimer }} Min</span>
+    </p>
+    <p class="font-secondary" *ngIf="tripDetail.vechileTimer === 0">
+        Your cab has been arrived, call your diver
+    </p>
     <p>please share OTP sent to your mobile to start ride</p>
-    <div style="display:flex;margin-top: 20px;justify-content: space-between">
+    <div class="flex-box space_between m_t_2">
         <div style="flex:1;background-color: #efefef;padding:10px;text-align: center;margin-right:10px;border-radius: 6px;">
-            <p><b>CASH</b></p>
+            <p><b>{{ tripDetail.paymentMode }}</b></p>
             <p>Payment</p>
         </div>
         <div style="flex:1;background-color: #efefef;padding:10px;text-align: center;margin-right:10px;border-radius: 6px;">
-            <p><b>23min</b></p>
+            <p><b>{{ tripDetail.duration }} Mins</b></p>
             <p>Duration</p>
         </div>
         <div style="flex:1;background-color: #efefef;padding:10px;text-align: center;border-radius: 6px;">
-            <p class="font-primary"><b>₹ 120</b></p>
+            <p class="font-primary"><b>₹ {{ tripDetail.approxPrice }}</b></p>
             <p>Trip Price</p>
         </div>
     </div>
-    <div style="display: flex;padding: 10px 0; margin:10px 0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;justify-content: space-between;">
+    <div style="display: flex;font-weight: bold;padding: 10px 0; margin:10px 0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;justify-content: space-between;">
         <div>Car Detail:  </div>
-        <div style="border-right:1px solid #999;padding-right: 10px;">HONDA</div>
-        <div style="border-right:1px solid #999;padding-right: 10px;">AMAZE</div>
-        <div>TN14 Z 1234</div>
+        <div style="border-right:1px solid #999;padding-right: 10px;">{{ tripDetail.vechileCompany }}</div>
+        <div style="border-right:1px solid #999;padding-right: 10px;">{{ tripDetail.vechileModel }}</div>
+        <div>{{ tripDetail.vechileNumber }}</div>
     </div>
     <div style="display: flex;justify-content: space-between;">
         <button mat-raised-button color="secondary"><mat-icon>home</mat-icon>HOME</button>

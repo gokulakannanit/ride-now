@@ -50,3 +50,21 @@ body { margin: 0;}
     width: 50px !important;
     height: 50px !important;
 }
+
+.flex_box {
+    display: flex;
+}
+
+.call_icon {
+    border-radius: 50%;
+    background-color: #3f51b5;
+    padding:10px;color: white;
+}
+
+.space_between {
+    justify-content: space-between
+}
+
+.m_t_2 {
+    margin-top: 20px;
+}

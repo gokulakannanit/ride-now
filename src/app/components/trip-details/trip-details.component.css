@@ -1,0 +1,15 @@
+:host {
+    display: block;
+    padding:10px;
+}
+
+.thumb {
+    border-radius: 6px;
+    height: 80px;
+    width:80px;
+}
+
+.driver-detail {
+    flex:auto;
+    margin-left:15px;
+}
