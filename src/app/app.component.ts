@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 declare var closeLoader:any;
+
+export interface PageDetail {
+  title: '',
+  backURL: ''
+}
 
 @Component({
   selector: 'app-root',
@@ -7,8 +13,22 @@ declare var closeLoader:any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor() {}
+  isHomepage:boolean = true;
+  pageoObject:PageDetail;
+  
+  pagesDetails: any = {
+    "rides": {title: 'Your Rides', backURL: '/home'},
+  };
+
+  constructor(private router: Router) {}
   ngOnInit(): void {
     closeLoader & closeLoader();
+    this.router.events.subscribe(val=>{
+      if(val instanceof NavigationEnd) {
+        this.isHomepage = (val.url === '/' || val.url === '/home');
+        console.log(this.isHomepage, "page changed >>>>", val);
+        //this.pageoObject = this.pagesDetails[val.path] || {};
+      }
+    })
   }
 }
