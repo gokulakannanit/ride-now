@@ -1,20 +1,22 @@
 <div>
-  <header>
+  <header class="app_header">
     <button mat-mini-fab (click)="leftSideNav.open()" color="white">
       <mat-icon>menu</mat-icon>
     </button>
   </header>
+
+  <header style="display: flex;padding:10px;" class="mat-elevation-z4">
+      <a mat-button color="default" style="vertical-align: middle;flex:0" href="/home">
+          <mat-icon style="vertical-align: middle;">arrow_back</mat-icon>
+      </a>
+      <h2 style="flex:auto;padding:5px;margin:0;">Your Rides</h2>
+  </header>
   
-  <app-place-selection class="place-selector"></app-place-selection>
-  <app-map></app-map>
-  <footer>
-    <button mat-raised-button color="primary" (click)="onRideNow()">RIDE NOW</button>
-  </footer>
   <router-outlet></router-outlet>
-  
+
   <!--Start of Side bar category list-->
   <app-sidebar #leftSideNav position="start">
-      <app-navbar ngProjectAs="body"></app-navbar>
+    <app-navbar ngProjectAs="body"></app-navbar>
   </app-sidebar>
   <!--End of Side bar category list-->
 </div>

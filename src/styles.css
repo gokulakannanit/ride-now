@@ -30,6 +30,7 @@ body { margin: 0;}
     width: 200px;
     margin-left: 20px;
 }
+
 .mdc-fab--mini {
     width: 40px !important;
     height: 40px !important;

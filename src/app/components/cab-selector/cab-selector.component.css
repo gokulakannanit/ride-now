@@ -10,6 +10,8 @@
 mat-list{
     max-height: 250px;
     overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 15px;
 }
 
 .cab-selection ::ng-deep .mat-mdc-list-item {
