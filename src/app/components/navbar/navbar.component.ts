@@ -23,12 +23,12 @@ export class NavbarComponent {
     {
       title: 'Support',
       icon: 'support',
-      redirectURL: '/rides'
+      redirectURL: '/support'
     },
     {
       title: 'About',
       icon: 'info',
-      redirectURL: '/rides'
+      redirectURL: '/about'
     }
   ];
 

@@ -17,7 +17,8 @@ export class AppComponent {
   pageoObject:PageDetail;
   
   pagesDetails: any = {
-    "rides": {title: 'Your Rides', backURL: '/home'},
+    "/rides": {title: 'Your Rides', backURL: '/home'},
+    "/about": {title: 'About Us', backURL: '/home'},
   };
 
   constructor(private router: Router) {}
@@ -27,7 +28,7 @@ export class AppComponent {
       if(val instanceof NavigationEnd) {
         this.isHomepage = (val.url === '/' || val.url === '/home');
         console.log(this.isHomepage, "page changed >>>>", val);
-        //this.pageoObject = this.pagesDetails[val.path] || {};
+        this.pageoObject = this.pagesDetails[val.url] || {};
       }
     })
   }
