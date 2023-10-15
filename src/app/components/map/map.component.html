@@ -2,7 +2,11 @@
     <p *ngIf="loading">Getting your location...</p>
 
     <div class="google_map_container">
-        <google-map [zoom]="mapZoom" [center]="mapCenter" [options]="mapOptions" width="100%" height="100vh">
+        <google-map [zoom]="mapZoom" 
+        [center]="mapCenter" 
+        [options]="mapOptions" 
+        width="100%" height="100vh"
+        (mapInitialized)="mapInit()">
         <map-marker
             #marker="mapMarker"
             [position]="mapCenter"

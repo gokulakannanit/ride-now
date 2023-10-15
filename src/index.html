@@ -48,10 +48,6 @@
         const closeLoader = () => {
             const loader = document.querySelectorAll('.loading')[0];
             loader.style.display = 'none';
-            setTimeout(() => {
-                var ele = document.getElementsByClassName('dismissButton');
-                ele.length > 0 && ele[0].click() && clearInterval(int);
-            }, 4000);
             
         }
         //window.screen.lockOrientationUniversal = window.screen.lockOrientation || window.screen.mozLockOrientation || window.screen.msLockOrientation

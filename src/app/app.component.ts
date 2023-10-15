@@ -19,6 +19,7 @@ export class AppComponent {
   pagesDetails: any = {
     "/rides": {title: 'Your Rides', backURL: '/home'},
     "/about": {title: 'About Us', backURL: '/home'},
+    "/support": {title: 'Need help ?', backURL: '/home'},
   };
 
   constructor(private router: Router) {}
