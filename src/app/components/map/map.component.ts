@@ -53,7 +53,7 @@ export class MapComponent {
     setTimeout(() => {
         var ele = document.getElementsByClassName('dismissButton');
         ele.length > 0 && (ele[0] as HTMLButtonElement).click();
-    }, 1500);
+    }, 2000);
   }
 
   getCurrentLocation() {
