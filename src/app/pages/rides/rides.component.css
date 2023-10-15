@@ -5,3 +5,29 @@
     left:0;
     width: 100%;
 }
+
+.route_list {
+    position: relative;
+    margin: 0;
+    padding:0 15px;
+    width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+}
+
+.route_list::before {
+    content:'';
+    position: absolute;
+    top: 12px;
+    left: 2px;
+    height: calc(100% - 20px);
+    border-left: 1px dashed #CCC;
+}
+.route_list li {
+    color: #FFA500;
+}
+.route_list li span{
+    font-size: 12px !important;
+    color:#666;
+}
