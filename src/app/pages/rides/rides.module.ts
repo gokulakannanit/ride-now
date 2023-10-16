@@ -20,7 +20,7 @@ import { RidesComponent } from './rides.component';
         path: '',
         pathMatch: 'full',
         component: RidesComponent,
-      },
+      }
     ]),
   ]
 })
