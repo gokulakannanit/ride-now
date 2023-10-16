@@ -17,9 +17,10 @@ export class AppComponent {
   pageoObject:PageDetail;
   
   pagesDetails: any = {
-    "/rides": {title: 'Your Rides', backURL: '/home'},
-    "/about": {title: 'About Us', backURL: '/home'},
-    "/support": {title: 'Need help ?', backURL: '/home'},
+    "rides": {title: 'Your Rides', backURL: '/home'},
+    "about": {title: 'About Us', backURL: '/home'},
+    "support": {title: 'Need help ?', backURL: '/home'},
+    "trip": {title: 'Trip Detail', backURL: '/rides'},
   };
 
   constructor(private router: Router) {}
@@ -29,7 +30,8 @@ export class AppComponent {
       if(val instanceof NavigationEnd) {
         this.isHomepage = (val.url === '/' || val.url === '/home');
         console.log(this.isHomepage, "page changed >>>>", val);
-        this.pageoObject = this.pagesDetails[val.url] || {};
+        const URL = val.url.split("/")[1] || val.url
+        this.pageoObject = this.pagesDetails[URL] || {};
       }
     })
   }
