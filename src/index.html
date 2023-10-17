@@ -31,7 +31,7 @@
             z-index: 10;
         }
     </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOQ3JePVpVpDFBR8cjj2GEO_DDihuE8A&libraries=places"></script>
+    
 </head>
 
 <body class="mat-typography no-ang">
@@ -44,15 +44,16 @@
         <app-root></app-root>
         <noscript>Please enable JavaScript to continue using this application.</noscript>
     </main>
+    
     <script>
         const closeLoader = () => {
             const loader = document.querySelectorAll('.loading')[0];
             loader.style.display = 'none';
             
         }
-        //window.screen.lockOrientationUniversal = window.screen.lockOrientation || window.screen.mozLockOrientation || window.screen.msLockOrientation
         window.screen.lock && window.screen.lock('portrait');
         
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOQ3JePVpVpDFBR8cjj2GEO_DDihuE8A&libraries=places"></script>
 </body>
 </html>
