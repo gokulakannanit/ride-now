@@ -28,8 +28,8 @@ const serverPort = 8080;
 const server = express();
 
 // Use plugin to serve Brotli files if browser supports them or fallback to Gzip
-server.use("/", expressStaticGzip(path.join(__dirname + '/dist/ride-now')));
-
+//server.use("/", expressStaticGzip(path.join(__dirname + '/dist/ride-now')));
+server.use(express.static(__dirname + '/dist/ride-now'));
 // Get the URL and redirect http to https in production environment else redirect to the main file
 server.get(/.*/, function (req, res, next) {
     res.sendFile(path.join(__dirname+'/dist/ride-now/index.html'));
