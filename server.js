@@ -19,10 +19,7 @@ app.listen(process.env.PORT || 8080);
 // Required modules
 const path = require('path');
 const express = require('express');
-const expressStaticGzip = require('express-static-gzip');
-
-// Configure Node server port
-const serverPort = 8080;
+//const expressStaticGzip = require('express-static-gzip');
 
 // Start the server
 const server = express();
