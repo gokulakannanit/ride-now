@@ -33,10 +33,7 @@ server.use("/", expressStaticGzip(path.join(__dirname + '/dist/ride-now')));
 
 // Get the URL and redirect http to https in production environment else redirect to the main file
 server.get(/.*/, function (req, res, next) {
-    if (req.headers['x-forwarded-proto'] !== 'https' && process.env.NODE_ENV === 'production')
-        res.redirect('https://' + req.hostname + req.url);
-    else
-        res.sendFile(__dirname + '/dist/ride-now/index.html');
+    res.sendFile(path.join(__dirname+'/dist/ride-now/index.html'));
 });
 
 // Start the server by listening on the default port or the one configurated before
