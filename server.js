@@ -5,15 +5,14 @@
 //const app = express();
 
 // Serve only the static files form the dist directory
-/*app.use(express.static(__dirname + '/dist/ride-now'));
+/*
+app.use(express.static(__dirname + '/dist/ride-now'));
 
-app.get('/*', function(req,res) {
-    
-res.sendFile(path.join(__dirname+'/dist/ride-now/index.html'));
+app.get('/*', function(req,res) {    
+    res.sendFile(path.join(__dirname+'/dist/ride-now/index.html'));
 });
 
-// Start the app by listening on the default Heroku port
-//app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 8080);
 
 */
 
@@ -29,7 +28,7 @@ const serverPort = 8080;
 const server = express();
 
 // Use plugin to serve Brotli files if browser supports them or fallback to Gzip
-//server.use("/", expressStaticGzip(path.join(__dirname + '/dist/ride-now')));
+server.use("/", expressStaticGzip(path.join(__dirname + '/dist/ride-now')));
 
 // Get the URL and redirect http to https in production environment else redirect to the main file
 server.get(/.*/, function (req, res, next) {
