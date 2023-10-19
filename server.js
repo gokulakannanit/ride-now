@@ -10,7 +10,13 @@ const nocache = require('nocache');
 
 app.use(nocache());
 
-app.use("/", expressStaticGzip(path.join(__dirname + '/dist/ride-now')));
+app.use("/", expressStaticGzip(path.join(__dirname + '/dist/ride-now'), {
+    enableBrotli: true,
+    orderPreference: ['br', 'gz'],
+    setHeaders: function (res, path) {
+       res.setHeader("Cache-Control", "public, max-age=31536000");
+    }
+ }));
 
 // Serve only the static files form the dist directory
 

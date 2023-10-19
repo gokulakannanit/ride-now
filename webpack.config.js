@@ -6,14 +6,14 @@ const zlib = require("zlib");
 module.exports = {
   plugins: [
     new CompressionPlugin({
-      filename: "[path][base].gz",
+      filename: "[path][base].gz[query]",
       algorithm: "gzip",
       test: /\.(js|css|html|svg|txt|eot|otf|ttf|gif)$/,
       threshold: 10240,
       minRatio: 0.7,
     }),
     new BrotliPlugin({
-      filename: "[path][base].br",
+      filename: "[path][base].br[query]",
       test: /\.(js|css|html|svg|txt|eot|otf|ttf|gif)$/,
       threshold: 10240,
       minRatio: 0.7,
