@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
 
   constructor(private router: Router) {}
   ngOnInit(): void {
-    setTimeout(()=>(closeLoader & closeLoader()), 1000);
+    setTimeout(()=>(closeLoader & closeLoader()), 800);
     this.router.events.subscribe(val=>{
       if(val instanceof NavigationEnd) {
         this.isHomepage = (val.url === '/' || val.url === '/home');

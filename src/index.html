@@ -26,12 +26,16 @@
             left: calc(50% - 60px);
             top: calc(50% - 70px);
             text-align: center;
-            z-index: -1;
+            z-index: 13;
         }
-        main {
+        .fixed_bg {
+            position: absolute;
+            left: 0;
+            top: 0;
             background-color: #fff;
             min-width: 100vw;
-            min-width: 100vh;
+            min-height: 100vh;
+            z-index: 12;
         }
     </style>
     
@@ -39,11 +43,13 @@
 </head>
 
 <body class="mat-typography no-ang">
+    <div class="fixed_bg"></div>
     <div class="loading">
         <div>
             <img src="/assets/images/logo.png" height="120px" />
         </div>
     </div>
+    
     <main>
         <app-root></app-root>
         <noscript>Please enable JavaScript to continue using this application.</noscript>
@@ -60,7 +66,8 @@
         const closeLoader = () => {
             const loader = document.querySelectorAll('.loading')[0];
             loader.style.display = 'none';
-            
+            const overlay_bg = document.querySelectorAll('.fixed_bg')[0];
+            overlay_bg.style.display = 'none';
         }
         window.screen.lock && window.screen.lock('portrait');
 
