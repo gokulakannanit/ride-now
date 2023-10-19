@@ -70,12 +70,6 @@ body { margin: 0;}
     margin-top: 20px;
 }
 
-[aria-hidden="true"] {
-    display: none;
-}
-
-::ng-deep *[aria-hidden="true"], 
-::ng-deep *[aria-hidden="true"] *,
 ::ng-deep .cdk-visually-hidden {
     display: none;
 }
