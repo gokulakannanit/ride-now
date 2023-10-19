@@ -1,5 +1,5 @@
 <app-place-selection class="place-selector"></app-place-selection>
-<img src="/assets/images/map.jpg" height="100%" style="object-fit: fill;" *ngIf="!showMap; else loggedOut" />
+<img src="/assets/images/map.jpg" style="height: 100%;object-fit: fill;" *ngIf="!showMap; else loggedOut" />
 <ng-template #loggedOut>
     <app-map></app-map>
 </ng-template>
