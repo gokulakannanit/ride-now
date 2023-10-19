@@ -69,3 +69,7 @@ body { margin: 0;}
 .m_t_2 {
     margin-top: 20px;
 }
+
+[aria-hidden="true"] * {
+    display: none;
+}
