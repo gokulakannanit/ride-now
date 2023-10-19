@@ -1,7 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 import { Router } from '@angular/router';
 @Component({
+  standalone: true,
   selector: 'app-navbar',
+  imports: [CommonModule, MatIconModule, MatListModule],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })

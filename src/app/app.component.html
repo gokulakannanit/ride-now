@@ -1,22 +1,4 @@
 <div>
-  <header class="app_header_home" *ngIf="isHomepage">
-    <button mat-mini-fab (click)="leftSideNav.open()" color="white">
-      <mat-icon>menu</mat-icon>
-    </button>
-  </header>
-
-  <header class="app_header_other mat-elevation-z4" *ngIf="!isHomepage">
-      <a mat-button color="default" style="vertical-align: middle;flex:0" [routerLink]="pageoObject.backURL">
-          <mat-icon style="vertical-align: middle;">arrow_back</mat-icon>
-      </a>
-      <h2 style="flex:auto;padding:5px;margin:0;">{{ pageoObject.title }}</h2>
-  </header>
-  
-  <router-outlet></router-outlet>
-
-  <!--Start of Side bar category list-->
-  <app-sidebar #leftSideNav position="start">
-    <app-navbar ngProjectAs="body" (closeme)="leftSideNav.close()"></app-navbar>
-  </app-sidebar>
-  <!--End of Side bar category list-->
+  <ng-template #commonRef></ng-template>
+  <router-outlet></router-outlet>  
 </div>

@@ -1,8 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component, ViewChild, Input } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 
 @Component({
+  standalone: true,
   selector: 'app-sidebar',
+  imports: [CommonModule, MatSidenavModule],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
 })
