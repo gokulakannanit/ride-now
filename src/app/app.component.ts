@@ -18,10 +18,8 @@ export class AppComponent implements OnInit {
   }
 
   loadCommonComponent() {
-    console.log('Loading Common Component');
     import('./components/common/common.component').then(
       ({ CommonComponent }) => {
-        console.log('After Loading Common Component');
         this.vcref.createComponent(CommonComponent);
       }
     )
