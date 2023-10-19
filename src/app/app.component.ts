@@ -29,7 +29,6 @@ export class AppComponent {
     this.router.events.subscribe(val=>{
       if(val instanceof NavigationEnd) {
         this.isHomepage = (val.url === '/' || val.url === '/home');
-        console.log(this.isHomepage, "page changed >>>>", val);
         const URL = val.url.split("/")[1] || val.url
         this.pageoObject = this.pagesDetails[URL] || {};
       }
