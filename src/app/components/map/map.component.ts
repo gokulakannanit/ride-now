@@ -10,8 +10,6 @@ import { ToastrService } from 'ngx-toastr';
 export class MapComponent {
   constructor(private toastr: ToastrService) {} 
 
-  loading: Boolean;
-
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap;
   @ViewChild(MapInfoWindow, { static: false }) infoWindow: MapInfoWindow;
 
@@ -57,15 +55,12 @@ export class MapComponent {
   }
 
   getCurrentLocation() {
-    this.loading = true;
-  
     navigator.geolocation.getCurrentPosition(
-      this.showMap.bind(this), this.errorLoading.bind(this), { enableHighAccuracy: true }
+      this.updateMap.bind(this), this.errorLoading.bind(this), { enableHighAccuracy: true }
     );
   }
 
-  showMap(position: GeolocationPosition) {
-    this.loading = false;
+  updateMap(position: GeolocationPosition) {
 
     const point: google.maps.LatLngLiteral = {
       lat: position.coords.latitude,
@@ -83,10 +78,7 @@ export class MapComponent {
     };
   }
 
-  errorLoading(error: any){
-    
-    this.loading = false;
-  
+  errorLoading(error: any){  
     if (error.PERMISSION_DENIED) {
       this.toastr.error("Couldn't get your location", 'Permission denied');
     } else if (error.POSITION_UNAVAILABLE) {

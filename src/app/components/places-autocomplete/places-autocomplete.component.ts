@@ -9,6 +9,8 @@ import {
   ViewChild,
 } from '@angular/core';
 
+declare var google:any;
+
 export interface PlaceSearchResult {
   address: string;
   location?: google.maps.LatLng;
@@ -67,24 +69,28 @@ export class PlaceAutocompleteComponent implements OnInit {
   ngOnInit() {}
 
   ngAfterViewInit() {
-    this.autocomplete = new google.maps.places.Autocomplete(
-      this.inputField.nativeElement
-    );
-
-    this.autocomplete.addListener('place_changed', () => {
-      this.ngZone.run(() => {
-        const place = this.autocomplete?.getPlace();
-        const result: PlaceSearchResult = {
-          address: this.inputField.nativeElement.value,
-          name: place?.name,
-          location: place?.geometry?.location,
-          imageUrl: this.getPhotoUrl(place),
-          iconUrl: place?.icon,
-        };
-
-        this.placeChanged.emit(result);
+    try{
+      this.autocomplete = new google.maps.places.Autocomplete(
+        this.inputField.nativeElement
+      );
+  
+      this.autocomplete?.addListener('place_changed', () => {
+        this.ngZone.run(() => {
+          const place = this.autocomplete?.getPlace();
+          const result: PlaceSearchResult = {
+            address: this.inputField.nativeElement.value,
+            name: place?.name,
+            location: place?.geometry?.location,
+            imageUrl: this.getPhotoUrl(place),
+            iconUrl: place?.icon,
+          };
+  
+          this.placeChanged.emit(result);
+        });
       });
-    });
+    } catch(e) {
+
+    }      
   }
 
   getPhotoUrl(

@@ -1,5 +1,8 @@
 <app-place-selection class="place-selector"></app-place-selection>
-<app-map></app-map>
-<footer>
+<img src="/assets/images/map.jpg" height="100%" style="object-fit: fill;" *ngIf="!showMap; else loggedOut" />
+<ng-template #loggedOut>
+    <app-map></app-map>
+</ng-template>
+<footer class="mat-elevation-z8">
     <button mat-raised-button color="primary" (click)="onRideNow()">RIDE NOW</button>
 </footer>
