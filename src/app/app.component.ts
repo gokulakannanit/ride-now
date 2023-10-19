@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 declare var closeLoader:any;
 
@@ -12,7 +12,7 @@ export interface PageDetail {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   isHomepage:boolean = true;
   pageoObject:PageDetail;
   
@@ -25,7 +25,7 @@ export class AppComponent {
 
   constructor(private router: Router) {}
   ngOnInit(): void {
-    closeLoader & closeLoader();
+    setTimeout(()=>(closeLoader & closeLoader()), 1000);
     this.router.events.subscribe(val=>{
       if(val instanceof NavigationEnd) {
         this.isHomepage = (val.url === '/' || val.url === '/home');
@@ -34,4 +34,5 @@ export class AppComponent {
       }
     })
   }
+
 }
