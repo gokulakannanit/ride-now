@@ -15,7 +15,13 @@
           "options": {
             "customWebpackConfig": {
               "path": "./webpack.config.js",
-              "replaceDuplicatePlugins": true
+              "mergeRules": {
+                "externals": "replace",
+                "module": {
+                  "rules": "prepend"
+                }
+              },
+              "replaceDuplicatePlugins": true              
             },
             "outputPath": "dist/ride-now",
             "index": "src/index.html",
