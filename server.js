@@ -6,10 +6,6 @@ const app = express();
 
 // Use plugin to serve Brotli files if browser supports them or fallback to Gzip
 
-const nocache = require('nocache');
-
-app.use(nocache());
-
 app.use("/", expressStaticGzip(path.join(__dirname + '/dist/ride-now'), {
     enableBrotli: true,
     orderPreference: ['br', 'gz'],
