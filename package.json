@@ -5,10 +5,11 @@
     "ng": "ng",
     "start": "node server.js",
     "purgecss": "node ./scripts/purgecss.js",
-    "build": "ng build --aot --configuration production && npm run purgecss",
+    "obfuscate": "node ./scripts/obfuscate.js",
+    "build": "ng build --aot --configuration production && npm run purgecss && npm run obfuscate",
     "watch": "ng build --aot --watch --configuration development",
     "test": "ng test",
-    "heroku-postbuild": "ng build --aot --configuration production && npm run purgecss"
+    "heroku-postbuild": "ng build --aot --configuration production && npm run purgecss && npm run obfuscate"
   },
   "private": true,
   "main": "server.js",
@@ -50,6 +51,7 @@
     "enhanced-resolve": "^3.3.0",
     "fs": "^0.0.1-security",
     "jasmine-core": "~4.6.0",
+    "javascript-obfuscator": "^4.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
