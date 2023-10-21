@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   private vcref: ViewContainerRef;
 
   ngOnInit(): void {
-    setTimeout(()=>(closeLoader & closeLoader()), 600);
+    setTimeout(()=>(closeLoader & closeLoader()), 800);
     this.loadCommonComponent();
   }
 
