@@ -4,12 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "purgecss": "node ./scripts/purgecss.js",
-    "obfuscate": "node ./scripts/obfuscate.js",
-    "build": "ng build --aot --configuration production && npm run purgecss && npm run obfuscate",
+    "build": "ng build --aot --configuration production",
     "watch": "ng build --aot --watch --configuration development",
     "test": "ng test",
-    "heroku-postbuild": "ng build --aot --configuration production && npm run purgecss && npm run obfuscate"
+    "heroku-postbuild": "ng build --aot --configuration production"
   },
   "private": true,
   "main": "server.js",
@@ -45,6 +43,7 @@
     "@angular/compiler-cli": "^16.1.0",
     "@angular/localize": "^16.2.7",
     "@types/jasmine": "~4.3.0",
+    "brotli-gzip-webpack-plugin": "^0.5.0",
     "brotli-webpack-plugin": "^1.1.0",
     "child_process": "^1.0.2",
     "compression-webpack-plugin": "^10.0.0",
