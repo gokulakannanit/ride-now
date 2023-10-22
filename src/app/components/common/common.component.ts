@@ -41,7 +41,7 @@ export class CommonComponent implements OnInit{
         this.checkForHomePage(val.url);
       }
       if(val instanceof NavigationEnd || val instanceof NavigationSkipped) {
-        this.isLoading = false
+        setTimeout(()=>{this.isLoading = false}, 500);
       }
     })
   }
