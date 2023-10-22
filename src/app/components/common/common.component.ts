@@ -35,14 +35,13 @@ export class CommonComponent implements OnInit{
 
   ngOnInit(): void {
     this.checkForHomePage(window.location.pathname);
-    console.log("CurrentNavigation ::: ", window.location.pathname);
     this._router.events.subscribe(val=>{
       if(val instanceof NavigationStart) {
         this.isLoading = true;
         this.checkForHomePage(val.url);
       }
       if(val instanceof NavigationEnd || val instanceof NavigationSkipped) {
-        this.isLoading = false;
+        setTimeout(()=>{this.isLoading = false}, 1200);
       }
     })
   }
