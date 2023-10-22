@@ -10,7 +10,7 @@ app.use("/", expressStaticGzip(path.join(__dirname + '/dist/ride-now'), {
     enableBrotli: true,
     orderPreference: ['br', 'gz'],
     setHeaders: function (res, path) {
-       res.setHeader("Cache-Control", "public, max-age=31536000");
+       //res.setHeader("Cache-Control", "public, max-age=31536000");
     }
  }));
 
