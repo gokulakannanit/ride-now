@@ -1,5 +1,5 @@
 .app_header_home {
-    position: fixed;
+    position: absolute;
     top:0;
     left:0;
     z-index:11;
@@ -10,7 +10,7 @@
     display: flex;
     padding: 10px;
     background-color: #fff;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -18,7 +18,7 @@
 }
 
 .page_loader {
-    position: fixed;
+    position: absolute;
     top: 60px;
     left: 0;
     width: 100%;
@@ -26,11 +26,11 @@
 }
 
 .bg_loading {
-    position: fixed;
+    position: absolute;
     top: 0px;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 10;
+    z-index: 11;
     background-color: #fff;
 }
