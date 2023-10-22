@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { SidebarComponent } from 'src/app/common/sidebar/sidebar.component';
 import { NavbarComponent } from '../navbar/navbar.component';
-import { NavigationEnd, Router, RouterModule } from '@angular/router';
+import { NavigationEnd, NavigationSkipped, NavigationStart, Router, RouterModule } from '@angular/router';
 
 export interface PageDetail {
   title: '',
@@ -14,14 +15,15 @@ export interface PageDetail {
 @Component({
   selector: 'app-common',
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatButtonModule, SidebarComponent, NavbarComponent, RouterModule],
+  imports: [CommonModule, MatIconModule, MatButtonModule, SidebarComponent, NavbarComponent, RouterModule, MatProgressBarModule],
   templateUrl: './common.component.html',
   styleUrls: ['./common.component.css']
 })
 export class CommonComponent implements OnInit{
-  constructor(private router: Router) {}
+  constructor(private _router: Router) {}
 
   isHomepage:boolean = true;
+  isLoading:boolean = false;
   pageoObject:PageDetail;
   
   pagesDetails: any = {
@@ -32,12 +34,22 @@ export class CommonComponent implements OnInit{
   };
 
   ngOnInit(): void {
-    this.router.events.subscribe(val=>{
-      if(val instanceof NavigationEnd) {
-        this.isHomepage = (val.url === '/' || val.url === '/home');
-        const URL = val.url.split("/")[1] || val.url
-        this.pageoObject = this.pagesDetails[URL] || {};
+    this.checkForHomePage(window.location.pathname);
+    console.log("CurrentNavigation ::: ", window.location.pathname);
+    this._router.events.subscribe(val=>{
+      if(val instanceof NavigationStart) {
+        this.isLoading = true;
+        this.checkForHomePage(val.url);
+      }
+      if(val instanceof NavigationEnd || val instanceof NavigationSkipped) {
+        this.isLoading = false;
       }
     })
+  }
+
+  checkForHomePage(val:any): void {
+    this.isHomepage = (val === '/' || val === '/home');
+    const URL = val.split("/")[1] || val
+    this.pageoObject = this.pagesDetails[URL] || {};
   }
 }

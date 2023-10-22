@@ -11,6 +11,9 @@
       <h2 style="flex:auto;padding:5px;margin:0;">{{ pageoObject.title }}</h2>
   </header>
 
+  <div class="page_loader">
+    <mat-progress-bar *ngIf="isLoading" color="Primary" mode="indeterminate"></mat-progress-bar>
+  </div>
   <!--Start of Side bar category list-->
   <app-sidebar #leftSideNav position="start">
     <app-navbar ngProjectAs="body" (closeme)="leftSideNav.close()"></app-navbar>
