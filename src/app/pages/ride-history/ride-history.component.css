@@ -5,3 +5,15 @@
     left:0;
     width: 100%;
 }
+
+.ride_history_detail {
+    padding: 20px;
+}
+
+.ride_history_detail .status {
+ color: var(--status-green);
+ font-style: italic;
+ background-color: #efefef;
+ display: inline-block;
+ padding: 5px 10px;
+}

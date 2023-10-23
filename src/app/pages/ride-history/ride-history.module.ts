@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
 import { RideHistoryComponent } from './ride-history.component';
 import { RouteListComponent } from 'src/app/components/route-list/route-list.component';
 
@@ -12,6 +13,7 @@ import { RouteListComponent } from 'src/app/components/route-list/route-list.com
   ],
   imports: [
     CommonModule,
+    MatCardModule,
     RouteListComponent,
     RouterModule.forChild([
       {

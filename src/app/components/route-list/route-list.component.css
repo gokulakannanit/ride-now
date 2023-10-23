@@ -13,12 +13,24 @@
     border-left: 1px dashed #CCC;
 }
 .route_list li {
-    color: #FFA500;
+    color: var(--secondary-color);
+    margin-top:10px;
 }
+
+.route_list li:first-child {
+    color: var(--primary-color);
+    margin-top:10px;
+}
+
 .route_list li span{
     display: block;
-    font-size: 12px !important;
     color:#666;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.route_list.small li span {
+    font-size: 12px;
 }
