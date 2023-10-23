@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { RidesComponent } from './rides.component';
+import { RouteListComponent } from 'src/app/components/route-list/route-list.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { RidesComponent } from './rides.component';
     MatIconModule,
     MatButtonModule,
     MatListModule,
+    RouteListComponent,
     RouterModule.forChild([
       {
         path: '',

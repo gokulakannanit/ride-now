@@ -1,102 +1,15 @@
-<div>    
-    <mat-list>
-        <mat-list-item style="height: auto;border-bottom: 1px solid #ccc;" routerLink="/trip/1">
-            <img matListItemIcon src="/assets/images/car/auto.png" />
-            <div style="display: flex;font-size: 14px;padding: 15px 0;">
-                <div style="flex:auto">
-                    <div><b>Fri, Jun 30, 06:45 AM</b></div>
-                    <div>Sedan CRN 747057</div>
-                    <ul class="route_list">
-                        <li><span>28, Lawyer Jaganathan St, Guindy, Chennai</span> </li>
-                        <li><span>170, 5th Main Rd, ALS Nagar, Noothencheri, Chennai</span> </li>
-                    </ul>
-                </div>
-                <p><b>₹122</b></p>
-            </div>                
-        </mat-list-item>
-        <mat-list-item style="height: auto;border-bottom: 1px solid #ccc;">
-            <img matListItemIcon src="/assets/images/car/sedan.png" />
-            <div style="display: flex;font-size: 14px;padding: 15px 0;">
-                <div style="flex:auto">
-                    <div><b>Fri, Jun 30, 06:45 AM</b></div>
-                    <div>Sedan CRN 747057</div>
-                    <ul class="route_list">
-                        <li><span>28, Lawyer Jaganathan St, Guindy, Chennai</span> </li>
-                        <li><span>170, 5th Main Rd, ALS Nagar, Noothencheri, Chennai</span> </li>
-                    </ul>
-                </div>
-                <p><b>₹522</b></p>
-            </div>                
-        </mat-list-item>
-        <mat-list-item style="height: auto;border-bottom: 1px solid #ccc;">
-            <img matListItemIcon src="/assets/images/car/suv.png" />
-            <div style="display: flex;font-size: 14px;padding: 15px 0;">
-                <div style="flex:auto">
-                    <div><b>Fri, Jun 30, 06:45 AM</b></div>
-                    <div>Sedan CRN 747057</div>
-                    <ul class="route_list">
-                        <li><span>28, Lawyer Jaganathan St, Guindy, Chennai</span> </li>
-                        <li><span>170, 5th Main Rd, ALS Nagar, Noothencheri, Chennai</span> </li>
-                    </ul>
-                </div>
-                <p><b>₹522</b></p>
-            </div>                
-        </mat-list-item>
-        <mat-list-item style="height: auto;border-bottom: 1px solid #ccc;">
-            <img matListItemIcon src="/assets/images/car/sedan.png" />
-            <div style="display: flex;font-size: 14px;padding: 15px 0;">
-                <div style="flex:auto">
-                    <div><b>Fri, Jun 30, 06:45 AM</b></div>
-                    <div>Sedan CRN 747057</div>
-                    <ul class="route_list">
-                        <li><span>28, Lawyer Jaganathan St, Guindy, Chennai</span> </li>
-                        <li><span>170, 5th Main Rd, ALS Nagar, Noothencheri, Chennai</span> </li>
-                    </ul>
-                </div>
-                <p><b>₹522</b></p>
-            </div>                
-        </mat-list-item>
-        <mat-list-item style="height: auto;border-bottom: 1px solid #ccc;">
-            <img matListItemIcon src="/assets/images/car/suv.png" />
-            <div style="display: flex;font-size: 14px;padding: 15px 0;">
-                <div style="flex:auto">
-                    <div><b>Fri, Jun 30, 06:45 AM</b></div>
-                    <div>Sedan CRN 747057</div>
-                    <ul class="route_list">
-                        <li><span>28, Lawyer Jaganathan St, Guindy, Chennai</span> </li>
-                        <li><span>170, 5th Main Rd, ALS Nagar, Noothencheri, Chennai</span> </li>
-                    </ul>
-                </div>
-                <p><b>₹522</b></p>
-            </div>                
-        </mat-list-item>
-        <mat-list-item style="height: auto;border-bottom: 1px solid #ccc;">
-            <img matListItemIcon src="/assets/images/car/sedan.png" />
-            <div style="display: flex;font-size: 14px;padding: 15px 0;">
-                <div style="flex:auto">
-                    <div><b>Fri, Jun 30, 06:45 AM</b></div>
-                    <div>Sedan CRN 747057</div>
-                    <ul class="route_list">
-                        <li><span>28, Lawyer Jaganathan St, Guindy, Chennai</span> </li>
-                        <li><span>170, 5th Main Rd, ALS Nagar, Noothencheri, Chennai</span> </li>
-                    </ul>
-                </div>
-                <p><b>₹522</b></p>
-            </div>                
-        </mat-list-item>
-        <mat-list-item style="height: auto;border-bottom: 1px solid #ccc;">
-            <img matListItemIcon src="/assets/images/car/suv.png" />
-            <div style="display: flex;font-size: 14px;padding: 15px 0;">
-                <div style="flex:auto">
-                    <div><b>Fri, Jun 30, 06:45 AM</b></div>
-                    <div>Sedan CRN 747057</div>
-                    <ul class="route_list">
-                        <li><span>28, Lawyer Jaganathan St, Guindy, Chennai</span> </li>
-                        <li><span>170, 5th Main Rd, ALS Nagar, Noothencheri, Chennai</span> </li>
-                    </ul>
-                </div>
-                <p><b>₹522</b></p>
-            </div>                
-        </mat-list-item>
-    </mat-list>
-</div>
+<mat-list>
+    <mat-list-item routerLink="/trip/1">
+        <div class="trip-list-data">
+            <div>
+                <img src="/assets/images/car/auto.png" />
+            </div>
+            <div class="detail">
+                <div><b>Fri, Jun 30, 06:45 AM</b></div>
+                <div>Sedan CRN 747057</div>
+                <app-route-list></app-route-list>
+            </div>
+            <div><b>₹122</b></div>
+        </div>
+    </mat-list-item>
+</mat-list>
