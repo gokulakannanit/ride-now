@@ -1,15 +1,15 @@
 <mat-list>
-    <mat-list-item routerLink="/trip/1">
+    <mat-list-item *ngFor="let ride of rideData" [routerLink]="'/trip/'+ride.id">
         <div class="trip-list-data">
             <div>
-                <img src="/assets/images/car/auto.png" />
+                <img [src]="'/assets/images/car/'+ride.cabType.toLowerCase()+'.png'" />
             </div>
             <div class="detail">
-                <div><b>Fri, Jun 30, 06:45 AM</b></div>
-                <div>Sedan CRN 747057</div>
+                <div><b>{{ ride.date }}</b></div>
+                <div>{{ ride.cabType }} {{ ride.crNo }}</div>
                 <app-route-list></app-route-list>
             </div>
-            <div><b>₹122</b></div>
+            <div><b>₹{{ ride.amount }}</b></div>
         </div>
     </mat-list-item>
 </mat-list>

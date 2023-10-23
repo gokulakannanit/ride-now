@@ -17,9 +17,12 @@
     margin-top:10px;
 }
 
+.route_list.small li {
+    margin-top:0;
+}
+
 .route_list li:first-child {
     color: var(--primary-color);
-    margin-top:10px;
 }
 
 .route_list li span{

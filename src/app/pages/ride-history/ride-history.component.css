@@ -11,9 +11,9 @@
 }
 
 .ride_history_detail .status {
- color: var(--status-green);
- font-style: italic;
- background-color: #efefef;
- display: inline-block;
- padding: 5px 10px;
+    color: var(--status-green);
+    font-style: italic;
+    background-color: #efefef;
+    display: inline-block;
+    padding: 5px 10px;
 }
