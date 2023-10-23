@@ -11,6 +11,10 @@ body { margin: 0;}
     --mdc-protected-button-container-color: #FFA500;
 }
 
+div, p, span {
+    cursor: none;
+}
+
 .mat-icon.mat-accent {
     --mat-icon-color: #FFA500;
 }
