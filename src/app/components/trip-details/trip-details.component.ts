@@ -1,5 +1,8 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { StarRatingColor } from '../star-rating/star-rating.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { DriverDetailComponent } from '../driver-detail/driver-detail.component';
 
 export interface TripDetail {
   driverName: String,
@@ -19,13 +22,13 @@ export interface TripDetail {
 }
 
 @Component({
+  standalone: true,
   selector: 'app-trip-details',
   templateUrl: './trip-details.component.html',
-  styleUrls: ['./trip-details.component.css']
+  styleUrls: ['./trip-details.component.css'],
+  imports: [CommonModule, MatIconModule, DriverDetailComponent, MatButtonModule]
 })
 export class TripDetailsComponent implements OnInit {
-  starCount:number = 5;
-  starColor:StarRatingColor = StarRatingColor.warn;
   tripDetail: TripDetail = {
       driverName: 'Chandran L.K.M',
       vechileType: 'auto',

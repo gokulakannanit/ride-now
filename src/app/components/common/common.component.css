@@ -7,21 +7,16 @@
 }
 
 .app_header_other {
+    position: relative;
     display: flex;
     padding: 10px;
     background-color: #fff;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     z-index: 12;
+    box-sizing: border-box;
 }
 
 .page_loader {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
+    position: relative;
     z-index: 13;
 }
 

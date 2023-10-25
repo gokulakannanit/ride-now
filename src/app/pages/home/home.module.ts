@@ -24,8 +24,6 @@ import { HomeComponent } from './home.component';
       MapComponent,
       PlaceSelectionComponent,
       PlaceAutocompleteComponent,
-      TripDetailsComponent,
-      StarRatingComponent,
   ],
   imports: [
     CommonModule,

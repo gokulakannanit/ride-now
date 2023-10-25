@@ -1,0 +1,18 @@
+<div class="flex_box">
+    <img [src]="tripDetail.imageURL" class="thumb"/>
+    <div class="driver_detail">
+        <p><b>{{ tripDetail.driverName }}</b></p>
+        <app-star-rating [rating]="tripDetail.rating"
+        [color]="starColor"></app-star-rating>
+        <p>Total trip {{ tripDetail.totalTrip }}</p>
+    </div>
+    <a href="tel:{{ tripDetail.contactNo }}">
+        <mat-icon class="call_icon">call</mat-icon>
+    </a>
+</div>
+<div style="display: flex;font-weight: bold;padding: 10px 0; margin:10px 0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;justify-content: space-between;">
+    <div>Car Detail:  </div>
+    <div style="border-right:1px solid #999;padding-right: 10px;">{{ tripDetail.vechileCompany }}</div>
+    <div style="border-right:1px solid #999;padding-right: 10px;">{{ tripDetail.vechileModel }}</div>
+    <div>{{ tripDetail.vechileNumber }}</div>
+</div>

@@ -1,11 +1,32 @@
 <div class="ride_history_detail">
-    <mat-card>
-        <mat-card-header>
-            <mat-card-title>Fri, Jun 30, 06:45 AM</mat-card-title>
-            <mat-card-subtitle><span class="status">Status: Completed</span></mat-card-subtitle>
-          </mat-card-header>
-        <mat-card-content>
-            <app-route-list [small]="false"></app-route-list>
-        </mat-card-content>       
-    </mat-card>
+    <h2>Fri, Jun 30, 06:45 AM</h2>
+    <p><span class="status">Status: Completed</span></p>
+    <app-route-list [small]="false" class="m-tb-10"></app-route-list>
+    <app-driver-detail [tripDetail]="tripDetail" class="m-tb-30"></app-driver-detail>
+    <div>
+        <h2>Payment Details</h2>
+        <div class="flex_box space_between f_16 p-tb-10 bor-b">
+            <div>Subtotal</div>
+            <div>₹ {{tripDetail.approxPrice}}</div>
+        </div>
+        <div class="flex_box space_between f_16 p-tb-10 bor-b">
+            <div>Discount</div>
+            <div>₹ 0</div>
+        </div>
+        <div class="flex_box space_between f_16 p-tb-10 bor-b">
+            <div>Tax</div>
+            <div>₹ 12</div>
+        </div>
+        <div class="flex_box space_between f_16 p-tb-10 bor-b">
+            <div>Tip</div>
+            <div>₹ 0</div>
+        </div>
+        <div class="flex_box space_between f_16 p-tb-10">
+            <div>Total</div>
+            <div>₹ {{tripDetail.approxPrice + 12}}</div>
+        </div>
+    </div>
+    <footer class="mat-elevation-z8 fix_bottom">
+        <button mat-raised-button color="secondary" class="btn_fill">ADD REVIEW</button>
+    </footer>
 </div>

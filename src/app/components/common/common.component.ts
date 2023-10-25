@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatProgressBarModule } from '@angular/material/progress-bar'
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { DriverDetailComponent } from 'src/app/components/driver-detail/driver-detail.component';
 import { SidebarComponent } from 'src/app/common/sidebar/sidebar.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { NavigationEnd, NavigationSkipped, NavigationStart, Router, RouterModule } from '@angular/router';
@@ -15,7 +16,9 @@ export interface PageDetail {
 @Component({
   selector: 'app-common',
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatButtonModule, SidebarComponent, NavbarComponent, RouterModule, MatProgressBarModule],
+  imports: [CommonModule, MatIconModule, 
+    MatButtonModule, SidebarComponent, 
+    NavbarComponent, RouterModule, DriverDetailComponent, MatProgressBarModule], 
   templateUrl: './common.component.html',
   styleUrls: ['./common.component.css']
 })
