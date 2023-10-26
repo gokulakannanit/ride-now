@@ -1,3 +1,13 @@
+:host {
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+}
+
 .place-selection-container {
     background: #fff;
     border-radius: 6px;

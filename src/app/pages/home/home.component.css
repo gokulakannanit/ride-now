@@ -15,12 +15,3 @@ footer button {
     width: 80%;
 }
 
-.place-selector {
-    position: absolute;
-    width: 100%;
-    top: 70px;
-    left: 0;
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-}

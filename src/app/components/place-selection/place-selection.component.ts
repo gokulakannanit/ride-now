@@ -1,8 +1,13 @@
 import { Component } from '@angular/core';
-import { PlaceSearchResult } from '../places-autocomplete/places-autocomplete.component';
+import { CommonModule } from '@angular/common';
+import { MatListModule } from '@angular/material/list';
+import { PlaceAutocompleteComponent, PlaceSearchResult } from '../places-autocomplete/places-autocomplete.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @Component({
+  standalone: true,
+  imports: [ CommonModule, MatListModule, MatIconModule, PlaceAutocompleteComponent ],
   selector: 'app-place-selection',
   templateUrl: './place-selection.component.html',
   styleUrls: ['./place-selection.component.css'],

@@ -4,20 +4,14 @@
             <span matListItemIcon>
                 <mat-icon color="primary">location_on</mat-icon>
             </span>
-            <app-place-autocomplete
-                (placeChanged)="fromValue = $event"
-                placeholder="Departure"
-            ></app-place-autocomplete>
+            <app-place-autocomplete placeholder="Departure"></app-place-autocomplete>
         </mat-list-item>
 
         <mat-list-item>
             <span matListItemIcon>
                 <mat-icon color="accent">trip_origin</mat-icon>
             </span>
-            <app-place-autocomplete
-            (placeChanged)="toValue = $event"
-            placeholder="Where do you want to go?"
-            ></app-place-autocomplete>
+            <app-place-autocomplete placeholder="Where do you want to go?"></app-place-autocomplete>
         </mat-list-item>
     </mat-list>
 </div>

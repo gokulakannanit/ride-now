@@ -1,9 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
-import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
+import { GoogleMap, GoogleMapsModule, MapInfoWindow, MapMarker } from '@angular/google-maps';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
+  standalone: true,
   selector: 'app-map',
+  imports:[CommonModule, GoogleMapsModule],
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })

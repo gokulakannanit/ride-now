@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {
   Component,
   ElementRef,
@@ -8,6 +9,9 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 declare var google:any;
 
@@ -20,6 +24,8 @@ export interface PlaceSearchResult {
 }
 
 @Component({
+  standalone: true,
+  imports: [CommonModule, MatFormFieldModule, MatInputModule],
   selector: 'app-place-autocomplete',
   template: `
     <mat-form-field appearance="outline" class="no-padding mat-elevation-z0">
