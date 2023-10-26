@@ -3,28 +3,29 @@
     <p><span class="status">Status: Completed</span></p>
     <app-route-list [small]="false" class="m-tb-10"></app-route-list>
     <app-driver-detail [tripDetail]="tripDetail" class="m-tb-30"></app-driver-detail>
+    <ng-template #paymentSplit let-title="title" let-price="price">
+        <div class="flex_box space_between f_16 p-tb-10 bor-b">
+            <div>{{ title }}</div>
+            <div>₹ {{ price }}</div>
+        </div>
+    </ng-template>
     <div>
         <h2>Payment Details</h2>
-        <div class="flex_box space_between f_16 p-tb-10 bor-b">
-            <div>Subtotal</div>
-            <div>₹ {{tripDetail.approxPrice}}</div>
-        </div>
-        <div class="flex_box space_between f_16 p-tb-10 bor-b">
-            <div>Discount</div>
-            <div>₹ 0</div>
-        </div>
-        <div class="flex_box space_between f_16 p-tb-10 bor-b">
-            <div>Tax</div>
-            <div>₹ 12</div>
-        </div>
-        <div class="flex_box space_between f_16 p-tb-10 bor-b">
-            <div>Tip</div>
-            <div>₹ 0</div>
-        </div>
-        <div class="flex_box space_between f_16 p-tb-10">
-            <div>Total</div>
-            <div>₹ {{tripDetail.approxPrice + 12}}</div>
-        </div>
+        <ng-container
+            *ngTemplateOutlet="paymentSplit; context:{title: 'Subtotal', price: tripDetail.approxPrice}"
+        ></ng-container>
+        <ng-container
+            *ngTemplateOutlet="paymentSplit; context:{title: 'Discount', price: 0}"
+        ></ng-container>
+        <ng-container
+            *ngTemplateOutlet="paymentSplit; context:{title: 'Tax', price: 12}"
+        ></ng-container>
+        <ng-container
+            *ngTemplateOutlet="paymentSplit; context:{title: 'Tip', price: 0}"
+        ></ng-container>
+        <ng-container
+            *ngTemplateOutlet="paymentSplit; context:{title: 'Total', price: (tripDetail.approxPrice + 12)}"
+        ></ng-container>
     </div>
     <footer class="mat-elevation-z8 fix_bottom">
         <button mat-raised-button color="secondary" class="btn_fill">ADD REVIEW</button>

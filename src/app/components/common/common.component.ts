@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Signal, signal, WritableSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -25,34 +25,35 @@ export interface PageDetail {
 export class CommonComponent implements OnInit{
   constructor(private _router: Router) {}
 
-  isHomepage:boolean = true;
-  isLoading:boolean = false;
-  pageoObject:PageDetail;
+  isHomepage = signal(true);
+  isLoading = signal(false);
+
+  pageoObject= signal({title:'', backURL: ''});
   
-  pagesDetails: any = {
+  pagesDetails:Signal<any> = signal({
     "rides": {title: 'Your Rides', backURL: '/home'},
     "about": {title: 'About Us', backURL: '/home'},
     "support": {title: 'Need help ?', backURL: '/home'},
     "trip": {title: 'Trip Detail', backURL: '/rides'},
-  };
+  });
 
   ngOnInit(): void {
     this.checkForHomePage(window.location.pathname);
     this._router.events.subscribe(val=>{
       if(val instanceof NavigationStart) {
-        this.isLoading = true;
+        this.isLoading.set(true);
         this.checkForHomePage(val.url);
       }
       if(val instanceof NavigationEnd || val instanceof NavigationSkipped) {
         //setTimeout(()=>{this.isLoading = false}, 500);
-        this.isLoading = false;
+        this.isLoading.set(false);
       }
     })
   }
 
   checkForHomePage(val:any): void {
-    this.isHomepage = (val === '/' || val === '/home');
+    this.isHomepage.set(val === '/' || val === '/home');
     const URL = val.split("/")[1] || val
-    this.pageoObject = this.pagesDetails[URL] || {};
+    this.pageoObject.set(this.pagesDetails()[URL] || {});
   }
 }
