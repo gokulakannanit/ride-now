@@ -1,7 +1,7 @@
 <ng-template #placeRef></ng-template>
 <img src="/assets/images/map.jpg" alt="dummy map image" 
 style="height: 100vh;width:100vw;object-fit: cover;" 
-*ngIf="!showMap;" />
+*ngIf="!showMap();" />
 <ng-template #mapRef></ng-template>
 <footer class="mat-elevation-z8">
     <button mat-raised-button color="primary" (click)="onRideNow()">RIDE NOW</button>

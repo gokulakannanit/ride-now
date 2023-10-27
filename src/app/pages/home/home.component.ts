@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, Signal, signal, ViewChild, ViewContainerRef } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 
-declare var mapApiLoaded:Boolean;
+declare var mapApiLoaded:boolean;
 
 @Component({
   selector: 'app-home',
@@ -17,11 +17,11 @@ export class HomeComponent implements OnInit{
   @ViewChild('placeRef', { read: ViewContainerRef })
   private placeRef: ViewContainerRef;
   
-  showMap: Boolean = false;
+  showMap = signal(false);
 
   ngOnInit(): void {
-    this.showMap = mapApiLoaded;
-    this.showMap && this.loadMapComponent();
+    this.showMap.set(mapApiLoaded);
+    this.showMap() && this.loadMapComponent();
     this.loadPlaceComponent();
   }
 
