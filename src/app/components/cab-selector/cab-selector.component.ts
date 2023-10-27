@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 
@@ -13,7 +14,7 @@ export interface VechileTypes {
 
 @Component({
   standalone: true,
-  imports:[CommonModule, MatIconModule, MatListModule],
+  imports:[CommonModule, MatIconModule, MatListModule, MatButtonModule],
   templateUrl: './cab-selector.component.html',
   styleUrls: ['./cab-selector.component.css']
 })

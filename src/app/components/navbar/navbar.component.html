@@ -3,7 +3,7 @@
 </div>
 <h2>My Profile<mat-icon class="v-align-middle">arrow_forward_ios</mat-icon></h2>
 <mat-list class="navlink">
-  <mat-list-item *ngFor="let navItem of navItems" (click)="redirectTo(navItem.redirectURL)">
+  <mat-list-item *ngFor="let navItem of navItems()" (click)="redirectTo(navItem.redirectURL)">
     <mat-icon matListItemIcon class="v-align-middle">{{ navItem.icon }}</mat-icon>
     <p>{{ navItem.title }}</p>
   </mat-list-item>

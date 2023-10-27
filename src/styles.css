@@ -118,6 +118,9 @@ div, p, span {
     padding:20px 0;
 }
 
+.v-align-middle {
+    vertical-align: middle;
+}
 
 
 .cdk-visually-hidden {

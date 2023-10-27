@@ -6,7 +6,6 @@ import { MatIconModule } from '@angular/material/icon';
   standalone: true,
   selector: 'a-star-rating',
   templateUrl: './star-rating.component.html',
-  styleUrls: ['./star-rating.component.css'],
   imports: [ CommonModule, MatIconModule ],
   encapsulation: ViewEncapsulation.Emulated
 })
