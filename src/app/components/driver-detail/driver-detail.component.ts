@@ -5,7 +5,7 @@ import { StarRatingColor, StarRatingComponent } from '../star-rating/star-rating
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-  selector'a-driver-detail',
+  selector: 'a-driver-detail',
   standalone: true,
   imports: [CommonModule, StarRatingComponent, MatIconModule],
   templateUrl: './driver-detail.component.html',
