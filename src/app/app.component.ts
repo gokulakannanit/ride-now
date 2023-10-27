@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 declare var closeLoader:any;
 
 @Component({
-  selector: 'app-root',
+  selector:'a-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -13,8 +13,8 @@ export class AppComponent implements OnInit {
   private vcref: ViewContainerRef;
 
   ngOnInit(): void {
-    setTimeout(()=>(closeLoader & closeLoader()), 800);
     this.loadCommonComponent();
+    setTimeout(()=>(closeLoader & closeLoader()), 800);    
   }
 
   loadCommonComponent() {

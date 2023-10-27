@@ -23,7 +23,6 @@ export interface TripDetail {
 
 @Component({
   standalone: true,
-  selector: 'app-trip-details',
   templateUrl: './trip-details.component.html',
   styleUrls: ['./trip-details.component.css'],
   imports: [CommonModule, MatIconModule, DriverDetailComponent, MatButtonModule]

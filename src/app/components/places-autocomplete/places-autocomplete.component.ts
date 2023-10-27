@@ -26,7 +26,7 @@ export interface PlaceSearchResult {
 @Component({
   standalone: true,
   imports: [CommonModule, MatFormFieldModule, MatInputModule],
-  selector: 'app-place-autocomplete',
+  selector: 'a-place-autocomplete',
   template: `
     <mat-form-field appearance="outline" class="no-padding mat-elevation-z0">
       <input [placeholder]="placeholder" #inputField matInput class="mat-elevation-z0" />

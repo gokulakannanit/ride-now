@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { TripDetail } from 'src/app/components/trip-details/trip-details.component';
 
 @Component({
-  selector: 'app-ride-history',
   templateUrl: './ride-history.component.html',
   styleUrls: ['./ride-history.component.css']
 })

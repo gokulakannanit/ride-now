@@ -14,7 +14,6 @@ export interface VechileTypes {
 @Component({
   standalone: true,
   imports:[CommonModule, MatIconModule, MatListModule],
-  selector: 'app-cab-selector',
   templateUrl: './cab-selector.component.html',
   styleUrls: ['./cab-selector.component.css']
 })

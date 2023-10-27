@@ -4,7 +4,7 @@ import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 
 @Component({
   standalone: true,
-  selector: 'app-sidebar',
+  selector:'a-sidebar',
   imports: [CommonModule, MatSidenavModule],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],

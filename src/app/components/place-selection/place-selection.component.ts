@@ -8,7 +8,6 @@ import { MatIconModule } from '@angular/material/icon';
 @Component({
   standalone: true,
   imports: [ CommonModule, MatListModule, MatIconModule, PlaceAutocompleteComponent ],
-  selector: 'app-place-selection',
   templateUrl: './place-selection.component.html',
   styleUrls: ['./place-selection.component.css'],
 })

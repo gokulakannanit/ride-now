@@ -2,8 +2,8 @@
     <img [src]="tripDetail.imageURL" class="thumb"/>
     <div class="driver_detail">
         <p><b>{{ tripDetail.driverName }}</b></p>
-        <app-star-rating [rating]="tripDetail.rating"
-        [color]="starColor"></app-star-rating>
+        <a-star-rating [rating]="tripDetail.rating"
+        [color]="starColor"></a-star-rating>
         <p>Total trip {{ tripDetail.totalTrip }}</p>
     </div>
     <a href="tel:{{ tripDetail.contactNo }}">

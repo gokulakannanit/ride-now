@@ -5,7 +5,7 @@ import { MatListModule } from '@angular/material/list';
 import { Router } from '@angular/router';
 @Component({
   standalone: true,
-  selector: 'app-navbar',
+  selector: 'a-navbar',
   imports: [CommonModule, MatIconModule, MatListModule],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']

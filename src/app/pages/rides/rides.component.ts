@@ -10,7 +10,6 @@ interface rideDetail {
 }
 
 @Component({
-  selector: 'app-rides',
   templateUrl: './rides.component.html',
   styleUrls: ['./rides.component.css']
 })

@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-route-list',
+  selector:'a-route-list',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './route-list.component.html',

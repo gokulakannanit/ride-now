@@ -14,7 +14,6 @@ export interface PageDetail {
 }
 
 @Component({
-  selector: 'app-common',
   standalone: true,
   imports: [CommonModule, MatIconModule, 
     MatButtonModule, SidebarComponent, 
