@@ -30,9 +30,9 @@ app.get('/*', function(req,res) {
     res.sendFile(path.join(__dirname+'/dist/ride-now/index.html'));
 });
 
-//app.listen(process.env.PORT || port);
+app.listen(process.env.PORT || port);
 
-spdy
+/*spdy
   .createServer(options, app)
   .listen(process.env.PORT || port, (error) => {
     if (error) {
@@ -41,4 +41,4 @@ spdy
     } else {
       console.log('Listening on port: ' + process.env.PORT || port + '.')
     }
-  })
+  })8/
