@@ -9,7 +9,7 @@ import { TripService } from 'src/app/service/trip.service';
 export class RideHistoryComponent {
   tripDetail: TripDetail;
   constructor(private _tripService: TripService) {
-    this.tripDetail = _tripService.getTripDetail();
+    this.tripDetail = this._tripService.getTripDetail();
   }
   
 }

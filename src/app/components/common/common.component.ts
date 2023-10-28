@@ -1,4 +1,4 @@
-import { Component, OnInit, Signal, signal, WritableSignal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -29,7 +29,7 @@ export class CommonComponent implements OnInit{
 
   pageoObject= signal({title:'', backURL: ''});
   
-  pagesDetails:Signal<any> = signal({
+  pagesDetails = signal({
     "rides": {title: 'Your Rides', backURL: '/home'},
     "about": {title: 'About Us', backURL: '/home'},
     "support": {title: 'Need help ?', backURL: '/home'},
@@ -52,7 +52,8 @@ export class CommonComponent implements OnInit{
 
   checkForHomePage(val:any): void {
     this.isHomepage.set(val === '/' || val === '/home');
-    const URL = val.split("/")[1] || val
-    this.pageoObject.set(this.pagesDetails()[URL] || {});
+    const URL = val.split("/")[1] || val;
+    const selectPageobj:any = this.pagesDetails();
+    this.pageoObject.set(selectPageobj[URL] || {});
   }
 }

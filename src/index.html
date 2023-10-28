@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="description" content="Cab booking application for intercity and out trip">
-  <meta name="keywords" content="Cab, Ride, Booking, trip, car">
-  <meta name="author" content="Gokula Jeyagopal">
-  <title>RideNow - Catch up on time</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-  <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+    <meta charset="utf-8">
+    <title>RideNow - Catch up on time</title>
+    <base href="/">
+    <meta name="description" content="Cab booking application for intercity and out trip">
+    <meta name="keywords" content="Cab, Ride, Booking, trip, car">
+    <meta name="author" content="Gokula Jeyagopal">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="apple-touch-icon" href="/assets/images/logo.png" />
 
@@ -72,7 +72,7 @@
             const overlay_bg = document.querySelectorAll('.fixed_bg')[0];
             overlay_bg.style.display = 'none';
         }
-        window.screen.lock && window.screen.lock('portrait');
+        
 
         function loadLazyCss(path) {
             let link = document.createElement('link');
@@ -80,13 +80,11 @@
             link.type = 'text/css';
             link.href = path;
             document.head.appendChild(link);
-        }
+        } 
+        loadLazyCss('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+        loadLazyCss('https://fonts.googleapis.com/icon?display=swap&family=Material+Icons');
 
-        window.addEventListener('load', () => {
-            loadLazyCss('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-            loadLazyCss('https://fonts.googleapis.com/icon?display=swap&family=Material+Icons');
-        })
-
+        window.screen.lock && window.screen.lock('portrait');
     </script>
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOOQ3JePVpVpDFBR8cjj2GEO_DDihuE8A&libraries=places&callback=initMap.bind(this)">

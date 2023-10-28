@@ -1,4 +1,4 @@
-import { Component, OnInit, Signal, signal, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, signal, ViewChild, ViewContainerRef } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 
 declare var mapApiLoaded:boolean;
