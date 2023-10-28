@@ -27,7 +27,5 @@ app.get('/*', function(req,res) {
     res.sendFile(path.join(__dirname+'/dist/ride-now/index.html'));
 });
 
-
-spdy
-  .createServer(options, app)
-  .listen(process.env.PORT || port)
+const spdyServer = spdy.createServer(options, app);
+spdyServer.listen(process.env.PORT || port)
