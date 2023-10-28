@@ -35,7 +35,7 @@ app.listen(process.env.PORT || port);
 
 spdy
   .createServer(options, app)
-  .listen(process.env.PORT || port, (error) => {
+  .listen(8080, (error) => {
     if (error) {
       console.error(error)
       return process.exit(1)
