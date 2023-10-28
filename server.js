@@ -1,10 +1,18 @@
 //Install express server
+const port = 4000;
 const express = require('express');
 const path = require('path');
+const spdy = require('spdy')
 const expressStaticGzip = require('express-static-gzip');
 const app = express();
+const fs = require('fs');
 
 // Use plugin to serve Brotli files if browser supports them or fallback to Gzip
+
+const options = {
+    key: fs.readFileSync(__dirname + '/server.key'),
+    cert:  fs.readFileSync(__dirname + '/server.crt')
+}
 
 app.use("/", expressStaticGzip(path.join(__dirname + '/dist/ride-now'), {
     enableBrotli: true,
@@ -22,4 +30,15 @@ app.get('/*', function(req,res) {
     res.sendFile(path.join(__dirname+'/dist/ride-now/index.html'));
 });
 
-app.listen(process.env.PORT || 4000);
+//app.listen(process.env.PORT || port);
+
+spdy
+  .createServer(options, app)
+  .listen(port, (error) => {
+    if (error) {
+      console.error(error)
+      return process.exit(1)
+    } else {
+      console.log('Listening on port: ' + port + '.')
+    }
+  })

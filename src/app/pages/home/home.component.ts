@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit{
   showMap = signal(false);
 
   ngOnInit(): void {
-    this.showMap.set(mapApiLoaded);
+    this.showMap.set(mapApiLoaded || false);
     this.showMap() && this.loadMapComponent();
     this.loadPlaceComponent();
   }

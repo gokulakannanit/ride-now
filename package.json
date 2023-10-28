@@ -34,6 +34,7 @@
     "http2": "^3.3.7",
     "nocache": "^4.0.0",
     "rxjs": "~7.8.0",
+    "spdy": "^4.0.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },
@@ -58,6 +59,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ngx-toastr": "^17.0.2",
+    "nodemon": "^3.0.1",
     "path": "^0.12.7",
     "purgecss": "^5.0.0",
     "typescript": "~5.1.3"
