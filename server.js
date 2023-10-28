@@ -10,8 +10,8 @@ const fs = require('fs');
 // Use plugin to serve Brotli files if browser supports them or fallback to Gzip
 
 const options = {
-    key: fs.readFileSync(__dirname + '/server.key'),
-    cert:  fs.readFileSync(__dirname + '/server.crt')
+    key: fs.readFileSync(path.join(__dirname + '/server.key')),
+    cert:  fs.readFileSync(path.join(__dirname + '/server.crt'))
 }
 
 app.use("/", expressStaticGzip(path.join(__dirname + '/dist/ride-now'), {
@@ -29,10 +29,10 @@ app.use("/", expressStaticGzip(path.join(__dirname + '/dist/ride-now'), {
 app.get('/*', function(req,res) {    
     res.sendFile(path.join(__dirname+'/dist/ride-now/index.html'));
 });
-
-app.listen(process.env.PORT || port);
-
 /*
+app.listen(process.env.PORT || port);
+*/
+
 spdy
   .createServer(options, app)
   .listen(process.env.PORT || port, (error) => {
@@ -40,7 +40,7 @@ spdy
       console.error(error)
       return process.exit(1)
     } else {
-      console.log('Listening on port: ' + process.env.PORT || port + '.')
+      console.log('Listening on port: ' + (process.env.PORT || port) + '.')
     }
   })
-  */
+  
