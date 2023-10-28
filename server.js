@@ -29,18 +29,18 @@ app.use("/", expressStaticGzip(path.join(__dirname + '/dist/ride-now'), {
 app.get('/*', function(req,res) {    
     res.sendFile(path.join(__dirname+'/dist/ride-now/index.html'));
 });
-/*
-app.listen(process.env.PORT || port);
-*/
 
+app.listen(process.env.PORT || port);
+
+/*
 spdy
   .createServer(options, app)
-  .listen(8080, (error) => {
+  .listen(process.env.PORT || port, (error) => {
     if (error) {
       console.error(error)
       return process.exit(1)
     } else {
-      console.log('Listening on port: ' + (process.env.PORT || port));
+      console.log('Listening on port: ' + (process.env.PORT || port))
     }
   })
-  
+  */
