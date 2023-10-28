@@ -32,7 +32,8 @@ app.get('/*', function(req,res) {
 
 app.listen(process.env.PORT || port);
 
-/*spdy
+/*
+spdy
   .createServer(options, app)
   .listen(process.env.PORT || port, (error) => {
     if (error) {
@@ -41,4 +42,5 @@ app.listen(process.env.PORT || port);
     } else {
       console.log('Listening on port: ' + process.env.PORT || port + '.')
     }
-  })8/
+  })
+  */
