@@ -2,17 +2,17 @@
 const port = 4000;
 const express = require('express');
 const path = require('path');
-const spdy = require('spdy')
+//const spdy = require('spdy')
 const expressStaticGzip = require('express-static-gzip');
 const app = express();
-const fs = require('fs');
+//const fs = require('fs');
 
 // Use plugin to serve Brotli files if browser supports them or fallback to Gzip
 
-const options = {
+/*const options = {
     key: fs.readFileSync(path.join(__dirname + '/server.key')),
     cert:  fs.readFileSync(path.join(__dirname + '/server.crt'))
-}
+}*/
 
 app.use("/", expressStaticGzip(path.join(__dirname + '/dist/ride-now'), {
     enableBrotli: true,
