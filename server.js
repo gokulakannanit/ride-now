@@ -34,7 +34,7 @@ app.get('/*', function(req,res) {
 
 spdy
   .createServer(options, app)
-  .listen(port, (error) => {
+  .listen(process.env.PORT || port, (error) => {
     if (error) {
       console.error(error)
       return process.exit(1)
