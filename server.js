@@ -15,7 +15,7 @@ app.use("/", expressStaticGzip(path.join(__dirname + '/dist/ride-now'), {
 
 app.get('/*', function(req,res) {   
     res.setHeader('Cache-Control', 'public, max-age=31536000'); 
-    res.render(path.join(__dirname+'/dist/ride-now/index.html'));
+    res.sendFile(path.join(__dirname+'/dist/ride-now/index.html'));
 });
 
 app.listen(process.env.PORT || port);
