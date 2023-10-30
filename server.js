@@ -5,10 +5,6 @@ const path = require('path');
 const expressStaticGzip = require('express-static-gzip');
 const app = express();
 
-var compression = require('compression');
-
-app.use(compression());
-
 app.use("/", expressStaticGzip(path.join(__dirname + '/dist/ride-now'), {
     enableBrotli: true,
     orderPreference: ['br', 'gz'],
