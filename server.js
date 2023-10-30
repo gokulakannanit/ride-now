@@ -1,7 +1,7 @@
 //Install express server
 const port = 4000;
 const express = require('express');
-var compression = require('compression')
+const compression = require('compression')
 const path = require('path');
 const expressStaticGzip = require('express-static-gzip');
 const app = express();

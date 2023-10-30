@@ -5,9 +5,9 @@
     "ng": "ng",
     "start": "node server.js",
     "build": "ng build --aot --configuration production",
+    "postbuild": "html-minifier dist/ride-now/index.html --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype -o dist/ride-now/index.html",
     "watch": "ng build --aot --watch --configuration development",
-    "test": "ng test",
-    "heroku-postbuild": "ng build --aot --configuration production"
+    "test": "ng test"
   },
   "private": true,
   "main": "server.js",
@@ -31,8 +31,10 @@
     "@angular/router": "^16.1.0",
     "compression": "^1.7.4",
     "express": "^4.18.2",
+    "express-minify": "^1.0.0",
     "express-static-gzip": "^2.1.7",
     "fs": "^0.0.1-security",
+    "html-minifier": "^4.0.0",
     "http2": "^3.3.7",
     "nocache": "^4.0.0",
     "nodemon": "^3.0.1",
