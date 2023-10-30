@@ -1,9 +1,12 @@
 //Install express server
 const port = 4000;
 const express = require('express');
+var compression = require('compression')
 const path = require('path');
 const expressStaticGzip = require('express-static-gzip');
 const app = express();
+
+app.use(compression());
 
 app.use("/", expressStaticGzip(path.join(__dirname + '/dist/ride-now'), {
     enableBrotli: true,
@@ -13,7 +16,8 @@ app.use("/", expressStaticGzip(path.join(__dirname + '/dist/ride-now'), {
     }
  }));
 
-app.get('/*', function(req,res) {   
+app.get('/*', function(req,res) {
+    res.set('Content-Type', 'text/html');
     res.setHeader('Cache-Control', 'public, max-age=31536000'); 
     res.sendFile(path.join(__dirname+'/dist/ride-now/index.html'));
 });
