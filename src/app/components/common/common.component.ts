@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, WritableSignal, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -9,27 +9,38 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { NavigationEnd, NavigationSkipped, NavigationStart, Router, RouterModule } from '@angular/router';
 
 export interface PageDetail {
-  title: '',
-  backURL: ''
+  title: string,
+  backURL: string
+}
+
+export interface PagesDetails {
+  [id: string]: PageDetail
 }
 
 @Component({
   standalone: true,
-  imports: [CommonModule, MatIconModule, 
-    MatButtonModule, SidebarComponent, 
-    NavbarComponent, RouterModule, DriverDetailComponent, MatProgressBarModule], 
+  imports: [
+    CommonModule, 
+    MatIconModule, 
+    MatButtonModule, 
+    SidebarComponent, 
+    NavbarComponent, 
+    RouterModule, 
+    DriverDetailComponent, 
+    MatProgressBarModule
+  ], 
   templateUrl: './common.component.html',
   styleUrls: ['./common.component.css']
 })
 export class CommonComponent implements OnInit{
   constructor(private _router: Router) {}
 
-  isHomepage = signal(true);
-  isLoading = signal(false);
+  isHomepage: WritableSignal<boolean> = signal(true);
+  isLoading: WritableSignal<boolean> = signal(false);
 
-  pageoObject= signal({title:'', backURL: ''});
+  pageoObject: WritableSignal<PageDetail> = signal({title:'', backURL: ''});
   
-  pagesDetails = signal({
+  pagesDetails: WritableSignal<PagesDetails> = signal({
     "rides": {title: 'Your Rides', backURL: '/home'},
     "about": {title: 'About Us', backURL: '/home'},
     "support": {title: 'Need help ?', backURL: '/home'},
@@ -53,7 +64,7 @@ export class CommonComponent implements OnInit{
   checkForHomePage(val:any): void {
     this.isHomepage.set(val === '/' || val === '/home');
     const URL = val.split("/")[1] || val;
-    const selectPageobj:any = this.pagesDetails();
+    const selectPageobj:PagesDetails = this.pagesDetails();
     this.pageoObject.set(selectPageobj[URL] || {});
   }
 }

@@ -1,8 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output, signal } from '@angular/core';
+import { Component, EventEmitter, Output, Signal, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { Router } from '@angular/router';
+
+export interface navListObject {
+  title: string,
+  icon: string,
+  redirectURL: string
+}
+
 @Component({
   standalone: true,
   selector: 'a-navbar',
@@ -14,7 +21,7 @@ export class NavbarComponent {
   constructor(private router: Router) {}
 
   @Output() closeme = new EventEmitter();
-  navItems = signal([
+  navItems:Signal<navListObject[]> = signal([
     {
       title: 'Your Rides',
       icon: 'history',

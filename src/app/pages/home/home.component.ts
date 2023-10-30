@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, signal, ViewChild, ViewContainerRef, WritableSignal } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 
 declare var mapApiLoaded:boolean;
@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit{
   @ViewChild('placeRef', { read: ViewContainerRef })
   private placeRef: ViewContainerRef;
   
-  showMap = signal(false);
+  showMap:WritableSignal<boolean> = signal(false);
 
   ngOnInit(): void {
     this.showMap.set(mapApiLoaded || false);
