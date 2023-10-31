@@ -14,8 +14,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadCommonComponent();
-    closeLoader & closeLoader();
-    //setTimeout(()=>(closeLoader & closeLoader()), 1000);    
+    //closeLoader & closeLoader();
+    setTimeout(()=>(closeLoader & closeLoader()), 1000);    
   }
 
   loadCommonComponent() {
