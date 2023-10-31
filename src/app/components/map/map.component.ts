@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { GoogleMap, GoogleMapsModule, MapInfoWindow, MapMarker } from '@angular/google-maps';
 import { ToastrService } from 'ngx-toastr';
 
@@ -7,7 +7,8 @@ import { ToastrService } from 'ngx-toastr';
   standalone: true,
   imports:[CommonModule, GoogleMapsModule],
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.css']
+  styleUrls: ['./map.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MapComponent {
   constructor(private toastr: ToastrService) {} 

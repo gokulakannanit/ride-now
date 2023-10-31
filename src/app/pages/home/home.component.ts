@@ -5,7 +5,7 @@ declare var mapApiLoaded:boolean;
 
 @Component({
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit{
   constructor(private _bottomSheet: MatBottomSheet) {}

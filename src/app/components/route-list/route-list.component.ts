@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './route-list.component.html',
-  styleUrls: ['./route-list.component.css']
+  styleUrls: ['./route-list.component.css'],
 })
 export class RouteListComponent {
   @Input() small:boolean = true;

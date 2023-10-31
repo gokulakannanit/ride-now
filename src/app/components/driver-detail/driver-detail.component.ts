@@ -9,7 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
   standalone: true,
   imports: [CommonModule, StarRatingComponent, MatIconModule],
   templateUrl: './driver-detail.component.html',
-  styleUrls: ['./driver-detail.component.css']
+  styleUrls: ['./driver-detail.component.css'],
 })
 export class DriverDetailComponent {
     @Input() tripDetail:TripDetail;

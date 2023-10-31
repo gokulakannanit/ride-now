@@ -15,7 +15,7 @@ export interface navListObject {
   selector: 'a-navbar',
   imports: [CommonModule, MatIconModule, MatListModule],
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
   constructor(private router: Router) {}

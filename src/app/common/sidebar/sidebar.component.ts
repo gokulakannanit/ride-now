@@ -7,7 +7,7 @@ import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
   selector:'a-sidebar',
   imports: [CommonModule, MatSidenavModule],
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css'],
+  styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
   @Input() public position:'start' | 'end'  = 'start';

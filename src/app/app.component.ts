@@ -4,7 +4,7 @@ declare var closeLoader:any;
 @Component({
   selector:'a-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
   constructor() {}

@@ -26,7 +26,7 @@ export interface TripDetail {
   standalone: true,
   templateUrl: './trip-details.component.html',
   styleUrls: ['./trip-details.component.css'],
-  imports: [CommonModule, MatIconModule, DriverDetailComponent, MatButtonModule]
+  imports: [CommonModule, MatIconModule, DriverDetailComponent, MatButtonModule],
 })
 export class TripDetailsComponent implements OnInit {
   constructor(private _tripService:TripService) {}

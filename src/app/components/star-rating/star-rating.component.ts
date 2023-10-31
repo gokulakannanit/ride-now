@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
@@ -7,7 +7,8 @@ import { MatIconModule } from '@angular/material/icon';
   selector: 'a-star-rating',
   templateUrl: './star-rating.component.html',
   imports: [ CommonModule, MatIconModule ],
-  encapsulation: ViewEncapsulation.Emulated
+  encapsulation: ViewEncapsulation.Emulated,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StarRatingComponent implements OnInit {
 
