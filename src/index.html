@@ -43,6 +43,23 @@
             min-height: 100vh;
             z-index: 999;
         }
+        .scale_anim {
+            animation: crescendo 1.5s normal forwards ease-in-out;
+        }
+
+        @keyframes crescendo {
+            from {
+                opacity: 0;
+                transform: scale(0, 0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.1, 1.1);
+            }
+            to {
+                transform: scale(1, 1);
+            }
+        }
     </style>
     
     
@@ -51,7 +68,7 @@
 <body class="mat-typography no-ang">
     <div class="fixed_bg"></div>
     <div class="loading">
-        <div>
+        <div class="scale_anim_">
             <img src="/assets/images/logo.png" height="120px" />
         </div>
     </div>

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -16,7 +16,8 @@ export interface VechileTypes {
   standalone: true,
   imports:[CommonModule, MatIconModule, MatListModule, MatButtonModule],
   templateUrl: './cab-selector.component.html',
-  styleUrls: ['./cab-selector.component.css']
+  styleUrls: ['./cab-selector.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CabSelectorComponent {
   constructor(private _bottomRef:MatBottomSheetRef) {}

@@ -1,4 +1,4 @@
-import { Component, OnInit, WritableSignal, signal } from '@angular/core';
+import { Component, OnInit, WritableSignal, signal, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -30,7 +30,8 @@ export interface PagesDetails {
     MatProgressBarModule
   ], 
   templateUrl: './common.component.html',
-  styleUrls: ['./common.component.css']
+  styleUrls: ['./common.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CommonComponent implements OnInit{
   constructor(private _router: Router) {}

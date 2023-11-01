@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { TripService } from 'src/app/service/trip.service';
@@ -27,6 +27,7 @@ export interface TripDetail {
   templateUrl: './trip-details.component.html',
   styleUrls: ['./trip-details.component.css'],
   imports: [CommonModule, MatIconModule, DriverDetailComponent, MatButtonModule],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TripDetailsComponent implements OnInit {
   constructor(private _tripService:TripService) {}
